@@ -1,6 +1,6 @@
 # Salesforce Certification Calculator
 
-*Calculate cumulative percentage from Salesforce certification section results*
+*Calculates cumulative percentage from Salesforce certification section results*
 
 **Contents**
 1. [Description](https://github.com/jtreeves/salesforce_certification_calculator#description)
