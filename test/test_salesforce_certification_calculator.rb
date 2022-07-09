@@ -10,4 +10,11 @@ class SalesforceTest < Minitest::Test
 
         assert_equal score, 62
     end
+
+    def test_cumulative_long
+        calculator = SFC.new([20, 30, 50], [80, 60, 40])
+        score = calculator.cumulative_score
+
+        assert_equal score, 54
+    end
 end
