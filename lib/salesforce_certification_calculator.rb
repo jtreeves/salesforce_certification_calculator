@@ -1,9 +1,9 @@
 class SalesforceCertificationCalculator
-    def self.vector_multiplication(vector1, vector2)
-        calculator = Math.new(vector1, vector2)
-        result = calculator.vector_multiplication
+    def self.dot_product(vector1, vector2)
+        calculator = Vectors.new(vector1, vector2)
+        result = calculator.dot_product
         return result
     end
 end
 
-require "salesforce_certification_calculator/math"
+require "salesforce_certification_calculator/vectors"
