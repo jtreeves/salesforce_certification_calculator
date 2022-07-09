@@ -16,7 +16,9 @@ class SalesforceCertificationCalculator::Vector
             sum += @vector[i] * extracted_other_vector[i]
         end
 
-        return sum
+        rounded_sum = sum.round(4)
+
+        return rounded_sum
     end
     
     def scalar_multiplication(scalar)
