@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "salesforce_certification_calculator"
+
+puts SalesforceCertificationCalculator.cumulative_score(ARGV[0], ARGV[1])
