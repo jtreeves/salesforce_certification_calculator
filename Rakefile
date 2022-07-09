@@ -1,7 +1,12 @@
+require "yard"
 require "rake/testtask"
 
+YARD::Rake::YardocTask.new do |t|
+    t.files   = ["lib/**/*.rb"]
+end
+
 Rake::TestTask.new do |t|
-  t.libs << "test"
+    t.libs << "test"
 end
 
 desc "Run tests"
