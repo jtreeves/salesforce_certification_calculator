@@ -1,5 +1,5 @@
 class SalesforceCertificationCalculator
-    def self.percentage(vector1, vector2)
+    def self.cumulative_score(vector1, vector2)
         vector1 = Vector.new(vector1)
         vector2 = Vector.new(vector2)
         result = vector1.dot_product(vector2) * 100
