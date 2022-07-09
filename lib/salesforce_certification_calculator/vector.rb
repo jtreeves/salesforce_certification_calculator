@@ -7,7 +7,7 @@ class SalesforceCertificationCalculator::Vector
     def dot_product(other_vector)
         sum = 0
         
-        (0..@sections-1).each do |i|
+        (0..@length-1).each do |i|
             sum += @vector[i] * other_vector[i]
         end
 
