@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
     s.date = %q{2022-07-06}
     s.description = "Salesforce resource for certifications"
     s.email = %q{jr@jacksonreeves.com}
-    s.files = ["Rakefile", "lib/salesforce_certification_calculator.rb", "lib/salesforce_certification_calculator/exams.rb", "lib/salesforce_certification_calculator/vectors.rb"]
-    s.test_files = ["test/test_salesforce_certification_calculator.rb", "test/test_exams.rb", "test/test_vectors.rb"]
+    s.files = ["Rakefile", "lib/salesforce_certification_calculator.rb", "lib/salesforce_certification_calculator/exam.rb", "lib/salesforce_certification_calculator/vector.rb"]
+    s.test_files = ["test/test_salesforce_certification_calculator.rb", "test/test_exam.rb", "test/test_vector.rb"]
     s.require_paths = ["lib"]
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"
