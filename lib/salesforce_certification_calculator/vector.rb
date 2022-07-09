@@ -4,18 +4,27 @@ class SalesforceCertificationCalculator::Vector
         @length = vector.length()
     end
 
+    def get_vector
+        return @vector
+    end
+
     def dot_product(other_vector)
         sum = 0
+        extracted_other_vector = other_vector.get_vector
         
         (0..@length-1).each do |i|
-            sum += @vector[i] * other_vector[i]
+            sum += @vector[i] * extracted_other_vector[i]
         end
 
         return sum
     end
     
     def scalar_multiplication(scalar)
-        product = @vector.map { |n| n * scalar }
+        product = []
+
+        (0..@length-1).each do |i|
+            product[i] = @vector[i] * scalar
+        end
 
         return product
     end
