@@ -7,7 +7,7 @@ class SalesforceCertificationCalculator::Vector
     # @param vector [Array] initial array containing numbers
     def initialize(vector)
         @vector = vector
-        @length = vector.length()
+        @length = vector.length
     end
 
     # Gets vector attribute of a Vector object
