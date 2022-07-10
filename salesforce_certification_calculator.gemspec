@@ -7,9 +7,17 @@ Gem::Specification.new do |s|
     s.date = %q{2022-07-06}
     s.description = "Salesforce resource for certifications"
     s.email = %q{jr@jacksonreeves.com}
-    s.files = ["Rakefile", "lib/salesforce_certification_calculator.rb", "lib/salesforce_certification_calculator/exam.rb", "lib/salesforce_certification_calculator/vector.rb"]
+    s.files = [
+        "Rakefile", 
+        "lib/salesforce_certification_calculator.rb", 
+        "lib/salesforce_certification_calculator/exam.rb", 
+        "lib/salesforce_certification_calculator/vector.rb", 
+        "lib/salesforce_certification_calculator/section.rb",
+        "data/exam1.xml",
+        "data/exam2.xml"
+    ]
     s.test_files = ["test/test_salesforce_certification_calculator.rb", "test/test_exam.rb", "test/test_vector.rb"]
-    s.require_paths = ["lib"]
+    s.require_paths = ["lib", "data"]
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"
     s.summary="Calculates cumulative percentage from Salesforce certification section results"
