@@ -1,0 +1,20 @@
+<exam>
+    <title>Exam 1</title>
+
+    <sections>
+        <section>
+            <name>Section 1</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Section 2</name>
+            <weight>30</weight>
+        </section>
+        
+        <section>
+            <name>Section 3</name>
+            <weight>50</weight>
+        </section>
+    </sections>
+</exam>
