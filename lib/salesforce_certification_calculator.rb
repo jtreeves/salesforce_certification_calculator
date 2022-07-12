@@ -4,7 +4,7 @@ class SalesforceCertificationCalculator
         @scores = Vector.new(scores)
     end
 
-    def self.get_all_exam_names_files
+    def self.get_exams_list
         exams = []
         files = Dir.glob("data/*xml")
 
@@ -15,8 +15,20 @@ class SalesforceCertificationCalculator
             exam.set_file(file)
             exams.push(exam)
         end
-        
+
         return exams
+    end
+
+    def get_existing_exam_data(exam)
+        doc = File.open(exam.get_file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content)
+        end
+
+        return exam
     end
 
     def self.get_all_existing_exam_data

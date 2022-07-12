@@ -20,7 +20,7 @@ class SalesforceCertificationCalculator::UI
         choice = gets.chomp
 
         if choice.between?(1, exams.length)
-            return choice - 1
+            return exams[choice - 1]
         else
             select_specific_exam(exams)
         end
