@@ -13,10 +13,15 @@ Gem::Specification.new do |s|
         "lib/salesforce_certification_calculator/exam.rb", 
         "lib/salesforce_certification_calculator/vector.rb", 
         "lib/salesforce_certification_calculator/section.rb",
+        "lib/salesforce_certification_calculator/u_i.rb",
         "data/exam1.xml",
         "data/exam2.xml"
     ]
-    s.test_files = ["test/test_salesforce_certification_calculator.rb", "test/test_exam.rb", "test/test_vector.rb"]
+    s.test_files = [
+        "test/test_salesforce_certification_calculator.rb", 
+        "test/test_exam.rb", 
+        "test/test_vector.rb"
+    ]
     s.require_paths = ["lib", "data"]
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"

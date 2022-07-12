@@ -20,7 +20,7 @@ class SalesforceCertificationCalculator
         return exams
     end
 
-    def get_existing_exam_data(exam)
+    def self.get_existing_exam_data(exam)
         doc = File.open(exam.get_file) { |f| Nokogiri::XML(f) }
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
@@ -47,3 +47,4 @@ end
 require "nokogiri"
 require "salesforce_certification_calculator/vector"
 require "salesforce_certification_calculator/exam"
+require "salesforce_certification_calculator/u_i"
