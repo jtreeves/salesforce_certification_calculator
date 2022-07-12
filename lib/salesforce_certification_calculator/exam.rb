@@ -1,4 +1,6 @@
 class SalesforceCertificationCalculator::Exam
+    SFC = SalesforceCertificationCalculator
+
     def initialize
         @title = ""
         @file = ""
@@ -26,8 +28,10 @@ class SalesforceCertificationCalculator::Exam
     end
 
     def add_section(name, weight)
-        new_section = SalesforceCertificationCalculator::Section.new(name, weight)
-        @sections.push(new_section)
+        section = SFC::Section.new
+        section.set_name(name)
+        section.set_weight(weight)
+        @sections.push(section)
     end
 end
 
