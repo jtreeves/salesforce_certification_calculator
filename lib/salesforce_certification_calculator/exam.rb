@@ -1,6 +1,7 @@
 class SalesforceCertificationCalculator::Exam
-    def initialize(title)
-        @title = title
+    def initialize
+        @title = ""
+        @file = ""
         @sections = []
     end
 
@@ -8,8 +9,20 @@ class SalesforceCertificationCalculator::Exam
         return @title
     end
 
+    def get_file
+        return @file
+    end
+
     def get_sections
         return @sections
+    end
+
+    def set_title(title)
+        @title = title
+    end
+
+    def set_file(file)
+        @file = file
     end
 
     def add_section(name, weight)
