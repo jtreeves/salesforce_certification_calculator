@@ -10,8 +10,9 @@ class SalesforceCertificationCalculator
 
         files.each do |file|
             exam = Exam.new
+            doc = File.open(file) { |f| Nokogiri::XML(f) }
             title = doc.at_xpath("//title")
-            exam.set_title(title)
+            exam.set_title(title.content)
             exam.set_file(file)
             exams.push(exam)
         end
