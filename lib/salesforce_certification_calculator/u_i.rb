@@ -25,4 +25,17 @@ class SalesforceCertificationCalculator::UI
             select_specific_exam(exams)
         end
     end
+
+    def self.retrieve_scores(exam)
+        sections = exam.get_sections
+        
+        sections.each do |section|
+            puts "#{section.get_name} is worth #{section.get_weight}%"
+            puts "What score did you get on that section? (enter an integer)"
+            score = gets.chomp.to_i
+            section.set_score(score)
+        end
+
+        return exam
+    end
 end
