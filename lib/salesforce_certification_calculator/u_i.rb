@@ -1,19 +1,14 @@
 class SalesforceCertificationCalculator::UI
-    def select_existing_exam(times = 0)
-        message = times == 0 ? "Do you want to select an existing exam? (enter Y or N)" : "You must enter either Y or N"
+    def select_list_or_new(times = 0)
+        message = times == 0 ? "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?" : "You must enter either LIST or NEW"
         puts message
-        input = gets.chomp
-        selected_existing
+        choice = gets.chomp
 
-        if input == "Y"
-            selected_existing = true
-        elsif input == "N"
-            select_existing_exam = false
+        if choice == "LIST" || choice == "NEW"
+            return choice
         else
             select_existing_exam(1)
         end
-
-        return selected_existing
     end
 
     def select_specific_exam(exams)
@@ -22,15 +17,12 @@ class SalesforceCertificationCalculator::UI
             puts "#{exams.find_index(exam) + 1} - #{exam.get_title}"
         end
         puts "Which one would you like to select? Enter the number before the exam name:"
-        input = gets.chomp
-        index
+        choice = gets.chomp
 
-        if input.between?(1, exams.length)
-            index = input - 1
+        if choice.between?(1, exams.length)
+            return choice - 1
         else
             select_specific_exam(exams)
         end
-
-        return index
     end
 end
