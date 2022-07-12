@@ -4,6 +4,21 @@ class SalesforceCertificationCalculator
         @scores = Vector.new(scores)
     end
 
+    def self.get_all_exam_names_files
+        exams = []
+        files = Dir.glob("data/*xml")
+
+        files.each do |file|
+            exam = Exam.new
+            title = doc.at_xpath("//title")
+            exam.set_title(title)
+            exam.set_file(file)
+            exams.push(exam)
+        end
+        
+        return exams
+    end
+
     def self.get_all_existing_exam_data
         files = Dir.glob("data/*.xml")
         files.each do |file|
