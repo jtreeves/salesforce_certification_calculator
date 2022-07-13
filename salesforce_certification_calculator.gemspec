@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
         "lib/salesforce_certification_calculator/exam.rb", 
         "lib/salesforce_certification_calculator/vector.rb", 
         "lib/salesforce_certification_calculator/section.rb",
+        "lib/salesforce_certification_calculator/accessor.rb",
         "lib/salesforce_certification_calculator/u_i.rb",
         "data/exam1.xml",
         "data/exam2.xml"
