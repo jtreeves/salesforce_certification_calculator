@@ -1,10 +1,12 @@
 class SalesforceCertificationCalculator::Accessor
-    def self.get_exams_list
+    SFC = SalesforceCertificationCalculator
+
+    def get_exams_list
         exams = []
         files = Dir.glob("data/*xml")
 
         files.each do |file|
-            exam = Exam.new
+            exam = SFC::Exam.new
             doc = File.open(file) { |f| Nokogiri::XML(f) }
             title = doc.at_xpath("//title")
             exam.set_title(title.content)
@@ -15,7 +17,7 @@ class SalesforceCertificationCalculator::Accessor
         return exams
     end
 
-    def self.get_existing_exam_data(exam)
+    def get_existing_exam_data(exam)
         doc = File.open(exam.get_file) { |f| Nokogiri::XML(f) }
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
@@ -28,4 +30,5 @@ class SalesforceCertificationCalculator::Accessor
     end
 end
 
+require "nokogiri"
 require "salesforce_certification_calculator/exam"
