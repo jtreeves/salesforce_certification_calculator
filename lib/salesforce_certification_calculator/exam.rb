@@ -21,7 +21,7 @@ class SalesforceCertificationCalculator::Exam
     end
 
     def get_total
-        return @total
+        return @total.round(2)
     end
 
     def set_title(title)
