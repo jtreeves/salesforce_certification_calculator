@@ -1,8 +1,8 @@
 class SalesforceCertificationCalculator::Section
-    def initialize
-        @name = ""
-        @weight = 0
-        @score = 0
+    def initialize(name, weight, score)
+        @name = name
+        @weight = weight
+        @score = score
     end
 
     def get_name
