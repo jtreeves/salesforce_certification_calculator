@@ -6,6 +6,24 @@ class SalesforceCertificationCalculator
         @ui = UI.new
     end
 
+    def get_exam
+        return @exam
+    end
+
+    def get_exams_list
+        @exams = @accessor.get_exams_list
+    end
+
+    def get_existing_exam_data
+        @exam = @accessor.get_existing_exam_data(@exam)
+    end
+
+    def calculate_total
+        @exam.calculate_total
+
+        return @exam.get_total
+    end
+
     def determine_percentage
         choice = @ui.select_list_or_new
 
