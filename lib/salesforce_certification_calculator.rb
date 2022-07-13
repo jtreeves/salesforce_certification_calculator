@@ -26,7 +26,7 @@ class SalesforceCertificationCalculator
         weights = doc.xpath("//weight")
 
         (0..names.length-1).each do |i|
-            exam.add_section(names[i].content, weights[i].content)
+            exam.add_section(names[i].content, weights[i].content.to_i)
         end
 
         return exam
