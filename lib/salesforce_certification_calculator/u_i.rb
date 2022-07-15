@@ -16,7 +16,7 @@ class SalesforceCertificationCalculator::UI
     def select_specific_exam(exams)
         puts "Your choices are:"
         exams.each do |exam|
-            puts "#{exams.find_index(exam) + 1} - #{exam.get_title}"
+            puts "#{exams.find_index(exam) + 1} - #{exam.title}"
         end
         puts "Which one would you like to select? Enter the number before the exam name:"
         choice = gets.chomp.to_i
@@ -29,13 +29,13 @@ class SalesforceCertificationCalculator::UI
     end
 
     def retrieve_scores(exam)
-        sections = exam.get_sections
+        sections = exam.sections
 
         sections.each do |section|
-            puts "#{section.get_name} is worth #{section.get_weight}%"
+            puts "#{section.name} is worth #{section.weight}%"
             puts "What score did you get on that section? (enter an integer)"
             score = gets.chomp.to_i
-            section.set_score(score)
+            section.score = score
         end
 
         return exam
@@ -44,10 +44,10 @@ class SalesforceCertificationCalculator::UI
     def create_temporary_exam
         exam = SFC::Exam.new
         puts "What is the title of this exam?"
-        exam.set_title(gets.chomp)
+        exam.title = gets.chomp
         puts "How many sections does it have?"
         length = gets.chomp.to_i
-        
+
         (1..length).each do |i|
             puts "What is the name of Section #{i}"
             name = gets.chomp

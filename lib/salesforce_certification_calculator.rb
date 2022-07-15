@@ -1,13 +1,11 @@
 class SalesforceCertificationCalculator
+    attr_reader :exam
+
     def initialize
         @exams = []
         @exam = Exam.new
         @accessor = Accessor.new
         @ui = UI.new
-    end
-
-    def get_exam
-        return @exam
     end
 
     def get_exams_list
@@ -21,7 +19,7 @@ class SalesforceCertificationCalculator
     def calculate_total
         @exam.calculate_total
 
-        return @exam.get_total
+        return @exam.total
     end
 
     def determine_percentage
@@ -38,7 +36,7 @@ class SalesforceCertificationCalculator
 
         @exam.calculate_total
 
-        return @exam.get_total
+        return @exam.total
     end
 end
 

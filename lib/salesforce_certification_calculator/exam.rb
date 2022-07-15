@@ -1,35 +1,14 @@
 class SalesforceCertificationCalculator::Exam
     SFC = SalesforceCertificationCalculator
 
+    attr_accessor :title, :file
+    attr_reader :sections, :total
+
     def initialize
         @title = ""
         @file = ""
         @sections = []
         @total = 0
-    end
-
-    def get_title
-        return @title
-    end
-
-    def get_file
-        return @file
-    end
-
-    def get_sections
-        return @sections
-    end
-
-    def get_total
-        return @total.round(2)
-    end
-
-    def set_title(title)
-        @title = title
-    end
-
-    def set_file(file)
-        @file = file
     end
 
     def add_section(name, weight, score = 0)
@@ -39,8 +18,10 @@ class SalesforceCertificationCalculator::Exam
 
     def calculate_total
         @sections.each do |section|
-            @total += section.get_weight * section.get_score / 100
+            @total += section.weight * section.score / 100
         end
+
+        @total = @total.round(2)
     end
 end
 

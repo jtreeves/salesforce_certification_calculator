@@ -9,8 +9,8 @@ class SalesforceCertificationCalculator::Accessor
             exam = SFC::Exam.new
             doc = File.open(file) { |f| Nokogiri::XML(f) }
             title = doc.at_xpath("//title")
-            exam.set_title(title.content)
-            exam.set_file(file)
+            exam.title = title.content
+            exam.file = file
             exams.push(exam)
         end
 
@@ -18,7 +18,7 @@ class SalesforceCertificationCalculator::Accessor
     end
 
     def get_existing_exam_data(exam)
-        doc = File.open(exam.get_file) { |f| Nokogiri::XML(f) }
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
 
