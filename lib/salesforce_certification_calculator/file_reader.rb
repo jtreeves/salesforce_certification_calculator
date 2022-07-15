@@ -1,4 +1,4 @@
-class SalesforceCertificationCalculator::Accessor
+class SalesforceCertificationCalculator::FileReader
     SFC = SalesforceCertificationCalculator
 
     def get_exams_list
