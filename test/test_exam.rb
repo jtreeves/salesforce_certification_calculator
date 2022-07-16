@@ -7,51 +7,51 @@ class ExamTest < Minitest::Test
     @@methods = @@exam.methods
     
     def test_initialize_title_exists
-        assert_includes @@methods, :title
+        assert_includes @@methods, :title, "should create an object with a title attribute"
     end
     
     def test_initialize_title_setter
-        assert_includes @@methods, :title=
+        assert_includes @@methods, :title=, "should create an object with a method for setting the title attribute"
     end
     
     def test_initialize_title_string
-        assert_instance_of String, @@exam.title
+        assert_instance_of String, @@exam.title, "should create an object with a title attribute of type string"
     end
     
     def test_initialize_file_exists
-        assert_includes @@methods, :file
+        assert_includes @@methods, :file, "should create an object with a file attribute"
     end
     
     def test_initialize_file_setter
-        assert_includes @@methods, :file=
+        assert_includes @@methods, :file=, "should create an object with a method for setting the file attribute"
     end
     
     def test_initialize_file_string
-        assert_instance_of String, @@exam.file
+        assert_instance_of String, @@exam.file, "should create an object with a file attribute of type string"
     end
     
     def test_initialize_sections_exists
-        assert_includes @@methods, :sections
+        assert_includes @@methods, :sections, "should create an object with a sections attribute"
     end
     
     def test_initialize_sections_array
-        assert_instance_of Array, @@exam.sections
+        assert_instance_of Array, @@exam.sections, "should create an object with a sections attribute of type array"
     end
     
     def test_initialize_total_exists
-        assert_includes @@methods, :total
+        assert_includes @@methods, :total, "should create an object with a total attribute"
     end
     
     def test_initialize_total_integer
-        assert_instance_of Integer, @@exam.total
+        assert_instance_of Integer, @@exam.total, "should create an object with a total attribute of type integer"
     end
     
     def test_add_section_exists
-        assert_includes @@methods, :add_section
+        assert_includes @@methods, :add_section, "should create an object with a method called add_section"
     end
     
     def test_calculate_total_exists
-        assert_includes @@methods, :calculate_total
+        assert_includes @@methods, :calculate_total, "should create an object with a method called calculate_total"
     end
     
     def test_add_section_name_weight_increments
@@ -59,7 +59,7 @@ class ExamTest < Minitest::Test
         @@exam.add_section('Database', 24)
         updated_sections = @@exam.sections.length
 
-        assert_equal initial_sections + 1, updated_sections
+        assert_equal initial_sections + 1, updated_sections, "should add a new section to exam object when invoke add_section method without score"
     end
     
     def test_add_section_name_weight_default_0_score
@@ -67,7 +67,7 @@ class ExamTest < Minitest::Test
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
-        assert_equal 0, recent_section.score
+        assert_equal 0, recent_section.score, "should give new section a score of 0 if no score parameter supplied"
     end
     
     def test_add_section_name_weight_score_increments
@@ -75,7 +75,7 @@ class ExamTest < Minitest::Test
         @@exam.add_section('Database', 24, 80)
         updated_sections = @@exam.sections.length
 
-        assert_equal initial_sections + 1, updated_sections
+        assert_equal initial_sections + 1, updated_sections, "should add a new section to exam object when invoke add_section method with score"
     end
 
     def test_add_section_name_weight_score_new_value
@@ -84,7 +84,7 @@ class ExamTest < Minitest::Test
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
-        assert_equal score_value, recent_section.score
+        assert_equal score_value, recent_section.score, "should give new section a score matching the score parameter if supplied"
     end
 
     def test_calculate_total_1_section
@@ -92,7 +92,7 @@ class ExamTest < Minitest::Test
         exam.add_section('Database', 100, 65)
         exam.calculate_total
 
-        assert_equal 65, exam.total
+        assert_equal 65, exam.total, "should set total to first section's score if exam contains only 1 section with a weight of 100 after invoking calculate_total"
     end
 
     def test_calculate_total_2_sections
@@ -101,7 +101,7 @@ class ExamTest < Minitest::Test
         exam.add_section('Application', 60, 85)
         exam.calculate_total
 
-        assert_equal 77, exam.total
+        assert_equal 77, exam.total, "should set total correctly when calculate_total called on exam containing 2 sections"
     end
 
     def test_calculate_total_3_sections
@@ -111,7 +111,7 @@ class ExamTest < Minitest::Test
         exam.add_section('Program', 40, 54)
         exam.calculate_total
 
-        assert_equal 66.15, exam.total
+        assert_equal 66.15, exam.total, "should set total correctly when calculate_total called on exam containing 3 sections"
     end
 
     def test_calculate_total_many_sections
@@ -128,6 +128,6 @@ class ExamTest < Minitest::Test
         exam.add_section('Section 10', 16, 65)
         exam.calculate_total
 
-        assert_equal 63.62, exam.total
+        assert_equal 63.62, exam.total, "should set total correctly when calculate_total called on exam containing multiple sections"
     end
 end
