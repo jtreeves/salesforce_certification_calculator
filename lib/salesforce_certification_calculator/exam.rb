@@ -53,9 +53,8 @@ class SalesforceCertificationCalculator::Exam
             @total += section.weight * section.score / 100.0
         end
 
-        # Blocks calculation when sum of sections' weights is not 100
+        # Sets total to error message when sum of sections' weights is not 100
         if summed_weights != 100
-            puts "Sum of all sections' weights must be 100"
             @total = "CANNOT CALCULATE"
         end
     end
