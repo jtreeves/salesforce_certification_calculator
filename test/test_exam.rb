@@ -1,5 +1,5 @@
 require "minitest/autorun"
-# require "nokogiri"
+require "nokogiri"
 require "salesforce_certification_calculator"
 
 class ExamTest < Minitest::Test
@@ -146,6 +146,326 @@ class ExamTest < Minitest::Test
         exam.calculate_total
     
         assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Administrator data"
+    end
+
+    def test_calculate_total_advanced_administrator
+        exam = Exam.new
+        exam.file = "data/AdvancedAdministrator-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Advanced Administrator data"
+    end
+
+    def test_calculate_total_b2b_solution_architect
+        exam = Exam.new
+        exam.file = "data/B2BSolutionArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with B2B Solution Architect data"
+    end
+
+    def test_calculate_total_b2c_solution_architect
+        exam = Exam.new
+        exam.file = "data/B2CSolutionArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with B2C Solution Architect data"
+    end
+
+    def test_calculate_total_data_architect
+        exam = Exam.new
+        exam.file = "data/DataArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Data Architect data"
+    end
+
+    def test_calculate_total_development_lifecycle_and_deployment_architect
+        exam = Exam.new
+        exam.file = "data/DevelopmentLifecycleAndDeploymentArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Development Lifecycle and Deployment Architect data"
+    end
+
+    def test_calculate_total_education_cloud_consultant
+        exam = Exam.new
+        exam.file = "data/EducationCloudConsultant-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Education Cloud Consultant data"
+    end
+
+    def test_calculate_total_experience_cloud_consultant
+        exam = Exam.new
+        exam.file = "data/ExperienceCloudConsultant-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Experience Cloud Consultant data"
+    end
+
+    def test_calculate_total_identity_and_access_management_architect
+        exam = Exam.new
+        exam.file = "data/IdentityAndAccessManagementArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Identity and Access Management Architect data"
+    end
+
+    def test_calculate_total_integration_architect
+        exam = Exam.new
+        exam.file = "data/IntegrationArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Integration Architect data"
+    end
+
+    def test_calculate_total_javascript_developer_i
+        exam = Exam.new
+        exam.file = "data/JavaScriptDeveloperI-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with JavaScript Developer I data"
+    end
+
+    def test_calculate_total_marketing_cloud_administrator
+        exam = Exam.new
+        exam.file = "data/MarketingCloudAdministrator-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Marketing Cloud Administrator data"
+    end
+
+    def test_calculate_total_marketing_cloud_consultant
+        exam = Exam.new
+        exam.file = "data/MarketingCloudConsultant-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Marketing Cloud Consultant data"
+    end
+
+    def test_calculate_total_marketing_cloud_developer
+        exam = Exam.new
+        exam.file = "data/MarketingCloudDeveloper-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Marketing Cloud Developer data"
+    end
+
+    def test_calculate_total_marketing_cloud_email_specialist
+        exam = Exam.new
+        exam.file = "data/MarketingCloudEmailSpecialist-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Marketing Cloud Email Specialist data"
+    end
+
+    def test_calculate_total_platform_app_builder
+        exam = Exam.new
+        exam.file = "data/PlatformAppBuilder-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Platform App Builder data"
+    end
+
+    def test_calculate_total_platform_developer_i
+        exam = Exam.new
+        exam.file = "data/PlatformDeveloperI-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Platform Developer I data"
+    end
+
+    def test_calculate_total_platform_developer_ii
+        exam = Exam.new
+        exam.file = "data/PlatformDeveloperII-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Platform Developer II data"
+    end
+
+    def test_calculate_total_sales_cloud_consultant
+        exam = Exam.new
+        exam.file = "data/SalesCloudConsultant-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Sales Cloud Consultant data"
+    end
+
+    def test_calculate_total_service_cloud_consultant
+        exam = Exam.new
+        exam.file = "data/ServiceCloudConsultant-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Service Cloud Consultant data"
+    end
+
+    def test_calculate_total_sharing_and_visibility_architect
+        exam = Exam.new
+        exam.file = "data/SharingAndVisibilityArchitect-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Sharing and Visibility Architect data"
     end
 
     def test_calculate_total_fails
