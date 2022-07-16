@@ -47,11 +47,8 @@ class SalesforceCertificationCalculator::Exam
     #   >> my_exam.calculate_total
     def calculate_total
         @sections.each do |section|
-            @total += section.weight * section.score / 100
+            @total += section.weight * section.score / 100.0
         end
-
-        # Round answer to 2 decimal places after initial calculation
-        @total = @total.round(2)
     end
 end
 

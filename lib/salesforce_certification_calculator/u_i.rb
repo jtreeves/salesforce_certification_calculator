@@ -10,7 +10,7 @@ class SalesforceCertificationCalculator::UI
     # 
     # @return [String] 'LIST' to indicate user wants to see a list of all existing exams; 'NEW' to indicate user wants to input all data manually
     def select_list_or_new
-        puts "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?" : "You must enter either LIST or NEW"
+        puts "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?"
         choice = gets.chomp
 
         if choice == "LIST" || choice == "NEW"
