@@ -46,8 +46,17 @@ class SalesforceCertificationCalculator::Exam
     #   >> my_exam = Exam.new
     #   >> my_exam.calculate_total
     def calculate_total
+        summed_weights = 0
+
         @sections.each do |section|
+            summed_weights += section.weight
             @total += section.weight * section.score / 100.0
+        end
+
+        # Blocks calculation when sum of sections' weights is not 100
+        if summed_weights != 100
+            puts "Sum of all sections' weights must be 100"
+            @total = "CANNOT CALCULATE"
         end
     end
 end
