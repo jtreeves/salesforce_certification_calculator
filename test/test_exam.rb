@@ -59,7 +59,7 @@ class ExamTest < Minitest::Test
         @@exam.add_section('Database', 24)
         updated_sections = @@exam.sections.length
 
-        assert_equal updated_sections, initial_sections + 1
+        assert_equal initial_sections + 1, updated_sections
     end
     
     def test_add_section_name_weight_default_0_score
@@ -67,7 +67,7 @@ class ExamTest < Minitest::Test
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
-        assert_equal recent_section.score, 0
+        assert_equal 0, recent_section.score
     end
     
     def test_add_section_name_weight_score_increments
@@ -75,7 +75,7 @@ class ExamTest < Minitest::Test
         @@exam.add_section('Database', 24, 80)
         updated_sections = @@exam.sections.length
 
-        assert_equal updated_sections, initial_sections + 1
+        assert_equal initial_sections + 1, updated_sections
     end
 
     def test_add_section_name_weight_score_new_value
@@ -84,7 +84,15 @@ class ExamTest < Minitest::Test
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
-        assert_equal recent_section.score, score_value
+        assert_equal score_value, recent_section.score
+    end
+
+    def test_calculate_total_1_section
+        exam = Exam.new
+        exam.add_section('Database', 100, 65)
+        exam.calculate_total
+
+        assert_equal 65, exam.total
     end
 
     def test_calculate_total_2_sections
@@ -93,7 +101,7 @@ class ExamTest < Minitest::Test
         exam.add_section('Application', 60, 85)
         exam.calculate_total
 
-        assert_equal exam.total, 77
+        assert_equal 77, exam.total
     end
 
     def test_calculate_total_3_sections
@@ -103,6 +111,23 @@ class ExamTest < Minitest::Test
         exam.add_section('Program', 40, 54)
         exam.calculate_total
 
-        assert_equal exam.total, 66.15
+        assert_equal 66.15, exam.total
+    end
+
+    def test_calculate_total_many_sections
+        exam = Exam.new
+        exam.add_section('Section 1', 5, 82)
+        exam.add_section('Section 2', 6, 93)
+        exam.add_section('Section 3', 7, 54)
+        exam.add_section('Section 4', 8, 62)
+        exam.add_section('Section 5', 9, 80)
+        exam.add_section('Section 6', 10, 40)
+        exam.add_section('Section 7', 12, 50)
+        exam.add_section('Section 8', 13, 60)
+        exam.add_section('Section 9', 14, 70)
+        exam.add_section('Section 10', 16, 65)
+        exam.calculate_total
+
+        assert_equal 63.62, exam.total
     end
 end
