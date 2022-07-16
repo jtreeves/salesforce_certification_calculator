@@ -59,7 +59,7 @@ class SalesforceCertificationCalculator
     #   => 87
     # 
     # @return [Number] cumulative score on exam
-    def determine_percentage_manually
+    def self.determine_percentage_manually
         choice = @ui.select_list_or_new
 
         if choice == "LIST"
