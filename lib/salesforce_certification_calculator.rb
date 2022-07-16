@@ -8,12 +8,12 @@ class SalesforceCertificationCalculator
         @ui = UI.new
     end
 
-    def get_exams_list
-        @exams = @reader.get_exams_list
+    def generate_exams_list
+        @exams = @reader.generate_exams_list
     end
 
-    def get_existing_exam_data
-        @exam = @reader.get_existing_exam_data(@exam)
+    def extract_initial_exam_data
+        @exam = @reader.extract_initial_exam_data(@exam)
     end
 
     def calculate_total
@@ -26,9 +26,9 @@ class SalesforceCertificationCalculator
         choice = @ui.select_list_or_new
 
         if choice == "LIST"
-            @exams = @reader.get_exams_list
+            @exams = @reader.generate_exams_list
             @exam = @ui.select_specific_exam(@exams)
-            @exam = @reader.get_existing_exam_data(@exam)
+            @exam = @reader.extract_initial_exam_data(@exam)
             @exam = @ui.retrieve_scores(@exam)
         else
             @exam = @ui.create_temporary_exam

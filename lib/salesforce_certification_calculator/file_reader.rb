@@ -1,7 +1,7 @@
 class SalesforceCertificationCalculator::FileReader
     SFC = SalesforceCertificationCalculator
 
-    def get_exams_list
+    def generate_exams_list
         exams = []
         files = Dir.glob("data/*xml")
 
@@ -17,7 +17,7 @@ class SalesforceCertificationCalculator::FileReader
         return exams
     end
 
-    def get_existing_exam_data(exam)
+    def extract_initial_exam_data(exam)
         doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
