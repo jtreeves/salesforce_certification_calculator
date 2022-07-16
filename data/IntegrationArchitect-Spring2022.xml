@@ -1,0 +1,35 @@
+<exam>
+    <title>Integration Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Evaluate the Current System Landscape</name>
+            <weight>8</weight>
+        </section>
+        
+        <section>
+            <name>Evaluate Business Needs</name>
+            <weight>11</weight>
+        </section>
+        
+        <section>
+            <name>Translate Needs to Integration Requirements</name>
+            <weight>22</weight>
+        </section>
+        
+        <section>
+            <name>Design Integration Solutions</name>
+            <weight>28</weight>
+        </section>
+        
+        <section>
+            <name>Build Solution</name>
+            <weight>23</weight>
+        </section>
+        
+        <section>
+            <name>Maintain Integration</name>
+            <weight>8</weight>
+        </section>
+    </sections>
+</exam>

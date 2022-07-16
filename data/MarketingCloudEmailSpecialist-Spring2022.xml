@@ -1,0 +1,30 @@
+<exam>
+    <title>Marketing Cloud Email Specialist - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Email Marketing Best Practices</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Content Creation and Delivery</name>
+            <weight>24</weight>
+        </section>
+        
+        <section>
+            <name>Marketing Automation</name>
+            <weight>26</weight>
+        </section>
+        
+        <section>
+            <name>Subscriber and Data Management</name>
+            <weight>26</weight>
+        </section>
+        
+        <section>
+            <name>Insights and Analytics</name>
+            <weight>14</weight>
+        </section>
+    </sections>
+</exam>

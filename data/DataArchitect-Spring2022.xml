@@ -1,0 +1,35 @@
+<exam>
+    <title>Data Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Data Modeling/Database Design</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Master Data Management</name>
+            <weight>5</weight>
+        </section>
+        
+        <section>
+            <name>Salesforce Data Management</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Data Governance</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Large Data Volume Considerations</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Data Migration</name>
+            <weight>15</weight>
+        </section>
+    </sections>
+</exam>

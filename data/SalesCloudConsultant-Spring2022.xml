@@ -1,0 +1,55 @@
+<exam>
+    <title>Sales Cloud Consultant - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Sales Practices</name>
+            <weight>11</weight>
+        </section>
+        
+        <section>
+            <name>Implementation Strategies</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Application of Product Knowledge</name>
+            <weight>18</weight>
+        </section>
+        
+        <section>
+            <name>Lead Management</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Account and Contact Management</name>
+            <weight>11</weight>
+        </section>
+        
+        <section>
+            <name>Opportunity Management</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Sales Productivity and Integration</name>
+            <weight>8</weight>
+        </section>
+        
+        <section>
+            <name>Consulting Practices</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Sales Metrics, Reports & Dashboards</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Data Management</name>
+            <weight>8</weight>
+        </section>
+    </sections>
+</exam>

@@ -1,0 +1,25 @@
+<exam>
+    <title>Platform Developer I - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Developer Fundamentals</name>
+            <weight>23</weight>
+        </section>
+        
+        <section>
+            <name>Process Automation and Logic</name>
+            <weight>30</weight>
+        </section>
+        
+        <section>
+            <name>User Interface</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Testing, Debugging, and Deployment</name>
+            <weight>22</weight>
+        </section>
+    </sections>
+</exam>

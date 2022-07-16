@@ -1,0 +1,30 @@
+<exam>
+    <title>B2B Solution Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Discovery and Customer Success</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Data Governance and Integration</name>
+            <weight>26</weight>
+        </section>
+        
+        <section>
+            <name>Design</name>
+            <weight>29</weight>
+        </section>
+        
+        <section>
+            <name>Delivery</name>
+            <weight>12</weight>
+        </section>
+        
+        <section>
+            <name>Operationalize the Solution</name>
+            <weight>8</weight>
+        </section>
+    </sections>
+</exam>

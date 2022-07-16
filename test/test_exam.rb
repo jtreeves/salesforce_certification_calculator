@@ -56,14 +56,14 @@ class ExamTest < Minitest::Test
     
     def test_add_section_name_weight_increments
         initial_sections = @@exam.sections.length
-        @@exam.add_section('Database', 24)
+        @@exam.add_section("Database", 24)
         updated_sections = @@exam.sections.length
 
         assert_equal initial_sections + 1, updated_sections, "should add a new section to exam object when invoke add_section method without score"
     end
     
     def test_add_section_name_weight_default_0_score
-        @@exam.add_section('Database', 24)
+        @@exam.add_section("Database", 24)
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
@@ -72,7 +72,7 @@ class ExamTest < Minitest::Test
     
     def test_add_section_name_weight_score_increments
         initial_sections = @@exam.sections.length
-        @@exam.add_section('Database', 24, 80)
+        @@exam.add_section("Database", 24, 80)
         updated_sections = @@exam.sections.length
 
         assert_equal initial_sections + 1, updated_sections, "should add a new section to exam object when invoke add_section method with score"
@@ -80,7 +80,7 @@ class ExamTest < Minitest::Test
 
     def test_add_section_name_weight_score_new_value
         score_value = 80
-        @@exam.add_section('Database', 24, score_value)
+        @@exam.add_section("Database", 24, score_value)
         sections_length = @@exam.sections.length
         recent_section = @@exam.sections[sections_length - 1]
 
@@ -89,16 +89,16 @@ class ExamTest < Minitest::Test
 
     def test_calculate_total_1_section
         exam = Exam.new
-        exam.add_section('Database', 100, 65)
+        exam.add_section("Database", 100, 65)
         exam.calculate_total
 
-        assert_equal 65, exam.total, "should set total to first section's score if exam contains only 1 section with a weight of 100 after invoking calculate_total"
+        assert_equal 65, exam.total, "should set total to first section"s score if exam contains only 1 section with a weight of 100 after invoking calculate_total"
     end
 
     def test_calculate_total_2_sections
         exam = Exam.new
-        exam.add_section('Database', 40, 65)
-        exam.add_section('Application', 60, 85)
+        exam.add_section("Database", 40, 65)
+        exam.add_section("Application", 60, 85)
         exam.calculate_total
 
         assert_equal 77, exam.total, "should set total correctly when calculate_total called on exam containing 2 sections"
@@ -106,9 +106,9 @@ class ExamTest < Minitest::Test
 
     def test_calculate_total_3_sections
         exam = Exam.new
-        exam.add_section('Database', 25, 62)
-        exam.add_section('Application', 35, 83)
-        exam.add_section('Program', 40, 54)
+        exam.add_section("Database", 25, 62)
+        exam.add_section("Application", 35, 83)
+        exam.add_section("Program", 40, 54)
         exam.calculate_total
 
         assert_equal 66.15, exam.total, "should set total correctly when calculate_total called on exam containing 3 sections"
@@ -116,16 +116,16 @@ class ExamTest < Minitest::Test
 
     def test_calculate_total_many_sections
         exam = Exam.new
-        exam.add_section('Section 1', 5, 82)
-        exam.add_section('Section 2', 6, 93)
-        exam.add_section('Section 3', 7, 54)
-        exam.add_section('Section 4', 8, 62)
-        exam.add_section('Section 5', 9, 80)
-        exam.add_section('Section 6', 10, 40)
-        exam.add_section('Section 7', 12, 50)
-        exam.add_section('Section 8', 13, 60)
-        exam.add_section('Section 9', 14, 70)
-        exam.add_section('Section 10', 16, 65)
+        exam.add_section("Section 1", 5, 82)
+        exam.add_section("Section 2", 6, 93)
+        exam.add_section("Section 3", 7, 54)
+        exam.add_section("Section 4", 8, 62)
+        exam.add_section("Section 5", 9, 80)
+        exam.add_section("Section 6", 10, 40)
+        exam.add_section("Section 7", 12, 50)
+        exam.add_section("Section 8", 13, 60)
+        exam.add_section("Section 9", 14, 70)
+        exam.add_section("Section 10", 16, 65)
         exam.calculate_total
 
         assert_equal 63.62, exam.total, "should set total correctly when calculate_total called on exam containing multiple sections"

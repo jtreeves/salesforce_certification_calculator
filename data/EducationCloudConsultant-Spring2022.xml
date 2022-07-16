@@ -1,0 +1,35 @@
+<exam>
+    <title>Education Cloud Consultant - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Domain Expertise</name>
+            <weight>18</weight>
+        </section>
+        
+        <section>
+            <name>Education Cloud Configuration</name>
+            <weight>22</weight>
+        </section>
+        
+        <section>
+            <name>Implementation Strategies and Best Practices</name>
+            <weight>18</weight>
+        </section>
+        
+        <section>
+            <name>Solution Design</name>
+            <weight>19</weight>
+        </section>
+        
+        <section>
+            <name>Integration and Data Management</name>
+            <weight>16</weight>
+        </section>
+        
+        <section>
+            <name>Analytics</name>
+            <weight>7</weight>
+        </section>
+    </sections>
+</exam>

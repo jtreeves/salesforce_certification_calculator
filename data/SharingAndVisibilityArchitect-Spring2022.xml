@@ -1,0 +1,20 @@
+<exam>
+    <title>Sharing and Visibility Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Declarative Sharing</name>
+            <weight>76</weight>
+        </section>
+        
+        <section>
+            <name>Performance and Scalability</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Programmatic Sharing</name>
+            <weight>17</weight>
+        </section>
+    </sections>
+</exam>

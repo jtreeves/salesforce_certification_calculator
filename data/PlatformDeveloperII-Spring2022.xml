@@ -1,0 +1,30 @@
+<exam>
+    <title>Platform Developer II - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Advanced Developer Fundamentals</name>
+            <weight>18</weight>
+        </section>
+        
+        <section>
+            <name>Process Automation, Logic, and Integration</name>
+            <weight>24</weight>
+        </section>
+        
+        <section>
+            <name>User Interface</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Testing, Debugging, and Deployment</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Performance</name>
+            <weight>18</weight>
+        </section>
+    </sections>
+</exam>

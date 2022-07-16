@@ -1,0 +1,35 @@
+<exam>
+    <title>Identity and Access Management Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Identity Management Concepts</name>
+            <weight>17</weight>
+        </section>
+        
+        <section>
+            <name>Accepting Third-Party Identity in Salesforce</name>
+            <weight>21</weight>
+        </section>
+        
+        <section>
+            <name>Salesforce as an Identity Provider</name>
+            <weight>17</weight>
+        </section>
+        
+        <section>
+            <name>Access Management Best Practices</name>
+            <weight>15</weight>
+        </section>
+        
+        <section>
+            <name>Salesforce Identity</name>
+            <weight>12</weight>
+        </section>
+        
+        <section>
+            <name>Community (Partner and Customer)</name>
+            <weight>18</weight>
+        </section>
+    </sections>
+</exam>

@@ -1,0 +1,45 @@
+<exam>
+    <title>Experience Cloud Consultant - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Experience Cloud Basics</name>
+            <weight>8</weight>
+        </section>
+        
+        <section>
+            <name>Sharing, Visibility, and Licensing</name>
+            <weight>17</weight>
+        </section>
+        
+        <section>
+            <name>Branding, Personalization, and Content</name>
+            <weight>15</weight>
+        </section>
+        
+        <section>
+            <name>Templates and Themes</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>User Creation and Authentication</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Adoption and Analytics</name>
+            <weight>5</weight>
+        </section>
+        
+        <section>
+            <name>Administration Setup and Configuration</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Customization Considerations and Limitations</name>
+            <weight>7</weight>
+        </section>
+    </sections>
+</exam>

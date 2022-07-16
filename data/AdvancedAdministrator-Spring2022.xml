@@ -1,0 +1,40 @@
+<exam>
+    <title>Advanced Administrator - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Security and Access</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Objects and Applications</name>
+            <weight>19</weight>
+        </section>
+        
+        <section>
+            <name>Auditing and Monitoring</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Cloud Applications</name>
+            <weight>11</weight>
+        </section>
+        
+        <section>
+            <name>Data and Analytics Management</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Environment Management and Deployment</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Process Automation</name>
+            <weight>20</weight>
+        </section>
+    </sections>
+</exam>

@@ -1,0 +1,45 @@
+<exam>
+    <title>Development Lifecycle and Deployment Architect - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Application Lifecycle Management</name>
+            <weight>8</weight>
+        </section>
+        
+        <section>
+            <name>Planning</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>System Design</name>
+            <weight>15</weight>
+        </section>
+        
+        <section>
+            <name>Building</name>
+            <weight>14</weight>
+        </section>
+        
+        <section>
+            <name>Deploying</name>
+            <weight>14</weight>
+        </section>
+        
+        <section>
+            <name>Testing</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Releasing</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Operating</name>
+            <weight>10</weight>
+        </section>
+    </sections>
+</exam>

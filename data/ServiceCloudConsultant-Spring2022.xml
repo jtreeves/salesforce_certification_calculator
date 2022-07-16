@@ -1,0 +1,50 @@
+<exam>
+    <title>Service Cloud Consultant - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Industry Knowledge</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Implementation Strategies</name>
+            <weight>15</weight>
+        </section>
+        
+        <section>
+            <name>Service Cloud Solution Design</name>
+            <weight>16</weight>
+        </section>
+        
+        <section>
+            <name>Knowledge Management</name>
+            <weight>9</weight>
+        </section>
+        
+        <section>
+            <name>Interaction Channels</name>
+            <weight>10</weight>
+        </section>
+        
+        <section>
+            <name>Case Management</name>
+            <weight>15</weight>
+        </section>
+        
+        <section>
+            <name>Contact Center Analytics</name>
+            <weight>5</weight>
+        </section>
+        
+        <section>
+            <name>Integration and Data Management</name>
+            <weight>5</weight>
+        </section>
+        
+        <section>
+            <name>Service Console</name>
+            <weight>15</weight>
+        </section>
+    </sections>
+</exam>

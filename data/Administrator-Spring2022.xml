@@ -1,0 +1,40 @@
+<exam>
+    <title>Administrator - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Configuration and Setup</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Object Manager and Lighting App Builder</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Sales and Marketing Applications</name>
+            <weight>12</weight>
+        </section>
+        
+        <section>
+            <name>Service and Support Applications</name>
+            <weight>11</weight>
+        </section>
+        
+        <section>
+            <name>Productivity and Collaboration</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Data and Analytics Management</name>
+            <weight>14</weight>
+        </section>
+        
+        <section>
+            <name>Workflow/Process Automation</name>
+            <weight>16</weight>
+        </section>
+    </sections>
+</exam>

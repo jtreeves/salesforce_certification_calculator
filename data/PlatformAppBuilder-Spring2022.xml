@@ -1,0 +1,30 @@
+<exam>
+    <title>Platform App Builder - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Salesforce Fundamentals</name>
+            <weight>23</weight>
+        </section>
+        
+        <section>
+            <name>Data Modeling and Management</name>
+            <weight>22</weight>
+        </section>
+        
+        <section>
+            <name>Business Logic and Process Automation</name>
+            <weight>28</weight>
+        </section>
+        
+        <section>
+            <name>User Interface</name>
+            <weight>17</weight>
+        </section>
+        
+        <section>
+            <name>App Deployment</name>
+            <weight>10</weight>
+        </section>
+    </sections>
+</exam>

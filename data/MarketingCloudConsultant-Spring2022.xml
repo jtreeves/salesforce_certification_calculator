@@ -1,0 +1,35 @@
+<exam>
+    <title>Marketing Cloud Consultant - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Discovery and Architecture</name>
+            <weight>16</weight>
+        </section>
+        
+        <section>
+            <name>Integration</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Account Configuration</name>
+            <weight>12</weight>
+        </section>
+        
+        <section>
+            <name>Automation</name>
+            <weight>20</weight>
+        </section>
+        
+        <section>
+            <name>Data Modeling and Management</name>
+            <weight>21</weight>
+        </section>
+        
+        <section>
+            <name>Messaging</name>
+            <weight>11</weight>
+        </section>
+    </sections>
+</exam>

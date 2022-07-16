@@ -1,0 +1,30 @@
+<exam>
+    <title>Marketing Cloud Administrator - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Digital Marketing Proficiency</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Subscriber Data Management</name>
+            <weight>18</weight>
+        </section>
+        
+        <section>
+            <name>Setup</name>
+            <weight>38</weight>
+        </section>
+        
+        <section>
+            <name>Channel Management</name>
+            <weight>16</weight>
+        </section>
+        
+        <section>
+            <name>Maintenance</name>
+            <weight>15</weight>
+        </section>
+    </sections>
+</exam>

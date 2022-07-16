@@ -1,0 +1,30 @@
+<exam>
+    <title>Marketing Cloud Developer - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Data Modeling</name>
+            <weight>14</weight>
+        </section>
+        
+        <section>
+            <name>Programmatic Languages</name>
+            <weight>35</weight>
+        </section>
+        
+        <section>
+            <name>API</name>
+            <weight>22</weight>
+        </section>
+        
+        <section>
+            <name>Data Management</name>
+            <weight>22</weight>
+        </section>
+        
+        <section>
+            <name>Security</name>
+            <weight>7</weight>
+        </section>
+    </sections>
+</exam>

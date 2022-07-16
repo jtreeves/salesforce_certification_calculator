@@ -1,0 +1,40 @@
+<exam>
+    <title>JavaScript Developer I - Spring 2022</title>
+
+    <sections>
+        <section>
+            <name>Variables, Types, and Collections</name>
+            <weight>23</weight>
+        </section>
+        
+        <section>
+            <name>Objects, Functions, and Classes</name>
+            <weight>25</weight>
+        </section>
+        
+        <section>
+            <name>Browser and Events</name>
+            <weight>17</weight>
+        </section>
+        
+        <section>
+            <name>Debugging and Error Handling</name>
+            <weight>7</weight>
+        </section>
+        
+        <section>
+            <name>Asynchronous Programming</name>
+            <weight>13</weight>
+        </section>
+        
+        <section>
+            <name>Server Side JavaScript</name>
+            <weight>8</weight>
+        </section>
+        
+        <section>
+            <name>Testing</name>
+            <weight>7</weight>
+        </section>
+    </sections>
+</exam>
