@@ -29,9 +29,9 @@ class SalesforceCertificationCalculator
             @exams = @reader.generate_exams_list
             @exam = @ui.select_specific_exam(@exams)
             @exam = @reader.extract_initial_exam_data(@exam)
-            @exam = @ui.retrieve_scores(@exam)
+            @exam = @ui.provide_scores(@exam)
         else
-            @exam = @ui.create_temporary_exam
+            @exam = @ui.provide_all_details_manually
         end
 
         @exam.calculate_total

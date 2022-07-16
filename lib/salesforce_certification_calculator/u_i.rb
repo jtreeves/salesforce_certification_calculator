@@ -28,7 +28,7 @@ class SalesforceCertificationCalculator::UI
         end
     end
 
-    def retrieve_scores(exam)
+    def provide_scores(exam)
         sections = exam.sections
 
         sections.each do |section|
@@ -41,7 +41,7 @@ class SalesforceCertificationCalculator::UI
         return exam
     end
 
-    def create_temporary_exam
+    def provide_all_details_manually
         exam = SFC::Exam.new
         puts "What is the title of this exam?"
         exam.title = gets.chomp
