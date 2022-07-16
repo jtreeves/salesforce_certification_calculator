@@ -1,6 +1,14 @@
 class SalesforceCertificationCalculator::UI
     SFC = SalesforceCertificationCalculator
 
+    # Allows user to select between viewing a list of all existing exams or inputting all data manually
+    # 
+    # @example Make Choice
+    #   >> ui = UI.new
+    #   >> choice = ui.select_list_or_new
+    #   => 'LIST'
+    # 
+    # @return [String] 'LIST' to indicate user wants to see a list of all existing exams; 'NEW' to indicate user wants to input all data manually
     def select_list_or_new
         puts "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?" : "You must enter either LIST or NEW"
         choice = gets.chomp
@@ -12,11 +20,25 @@ class SalesforceCertificationCalculator::UI
         end
     end
 
+    # Allows user to select which exam from the list of existing exams to use
+    # 
+    # @example Select a Specific Exam
+    #   >> ui = UI.new
+    #   >> reader = FileReader.new
+    #   >> exams = reader.generate_exams_list
+    #   >> exam = ui.select_specific_exam(exams)
+    #   => <SalesforceCertificationCalculator::Exam 0x000987>
+    # 
+    # @param exams [Array] collection of Exam objects to use for selection
+    # 
+    # @return [Exam] object with name, file, and section details for selected exam
     def select_specific_exam(exams)
         puts "Your choices are:"
+
         exams.each do |exam|
             puts "#{exams.find_index(exam) + 1} - #{exam.title}"
         end
+
         puts "Which one would you like to select? Enter the number before the exam name:"
         choice = gets.chomp.to_i
 
@@ -27,6 +49,19 @@ class SalesforceCertificationCalculator::UI
         end
     end
 
+    # Allows user to input their scores for each section
+    # 
+    # @example Enter Scores
+    #   >> ui = UI.new
+    #   >> reader = FileReader.new
+    #   >> exams = reader.generate_exams_list
+    #   >> exam = ui.select_specific_exam(exams)
+    #   >> updated_exam = ui.provide_scores(exam)
+    #   => <SalesforceCertificationCalculator::Exam 0x000987>
+    # 
+    # @param exam [Exam] object with name, file, and section details
+    # 
+    # @return [Exam] object with name, file, and section details, updated with the individual scores for each section
     def provide_scores(exam)
         sections = exam.sections
 
@@ -40,6 +75,14 @@ class SalesforceCertificationCalculator::UI
         return exam
     end
 
+    # Allows user to provide all exam data manually
+    # 
+    # @example Input Information
+    #   >> ui = UI.new
+    #   >> exam = ui.provide_all_details_manually
+    #   => <SalesforceCertificationCalculator::Exam 0x000987>
+    # 
+    # @return [Exam] object with name, file, and section details, including scores for each section
     def provide_all_details_manually
         exam = SFC::Exam.new
         puts "What is the title of this exam?"
