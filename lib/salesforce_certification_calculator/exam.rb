@@ -3,10 +3,13 @@ class SalesforceCertificationCalculator::Exam
 
     # @!attribute title
     #   @return [String] name of the exam
+    # 
     # @!attribute file
     #   @return [String] path to file containing exam data
+    # 
     # @!attribute [r] sections
     #   @return [Array] collection of Section objects for all sections of the exam
+    # 
     # @!attribute [r] total
     #   @return [Number] cumulative score for the entire exam
     attr_accessor :title, :file
@@ -31,7 +34,7 @@ class SalesforceCertificationCalculator::Exam
     # 
     # @param name [String] title of the section
     # @param weight [Number] percentage weight of the section, expressed as an integer
-    # @param score [Number] individual's percentage score on that section of the exam, expressed as an integer
+    # @param score [Number] individual's percentage score on that section of the exam, expressed as an integer; uses 0 as default value
     def add_section(name, weight, score = 0)
         section = SFC::Section.new(name, weight, score)
         @sections.push(section)
