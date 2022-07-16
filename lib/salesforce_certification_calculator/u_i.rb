@@ -1,15 +1,14 @@
 class SalesforceCertificationCalculator::UI
     SFC = SalesforceCertificationCalculator
 
-    def select_list_or_new(times = 0)
-        message = times == 0 ? "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?" : "You must enter either LIST or NEW"
-        puts message
+    def select_list_or_new
+        puts "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?" : "You must enter either LIST or NEW"
         choice = gets.chomp
 
         if choice == "LIST" || choice == "NEW"
             return choice
         else
-            select_list_or_new(1)
+            select_list_or_new()
         end
     end
 
