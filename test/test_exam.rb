@@ -1,4 +1,5 @@
 require "minitest/autorun"
+# require "nokogiri"
 require "salesforce_certification_calculator"
 
 class ExamTest < Minitest::Test
@@ -92,7 +93,7 @@ class ExamTest < Minitest::Test
         exam.add_section("Database", 100, 65)
         exam.calculate_total
 
-        assert_equal 65, exam.total, "should set total to first section"s score if exam contains only 1 section with a weight of 100 after invoking calculate_total"
+        assert_equal 65, exam.total, "should set total to first section's score if exam contains only 1 section with a weight of 100 after invoking calculate_total"
     end
 
     def test_calculate_total_2_sections
@@ -129,5 +130,21 @@ class ExamTest < Minitest::Test
         exam.calculate_total
 
         assert_equal 63.62, exam.total, "should set total correctly when calculate_total called on exam containing multiple sections"
+    end
+
+    def test_calculate_total_administrator
+        exam = Exam.new
+        exam.file = "data/Administrator-Spring2022.xml"
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        names = doc.xpath("//name")
+        weights = doc.xpath("//weight")
+    
+        (0..names.length-1).each do |i|
+            exam.add_section(names[i].content, weights[i].content.to_i, 100)
+        end
+
+        exam.calculate_total
+    
+        assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam of Administrator type"
     end
 end
