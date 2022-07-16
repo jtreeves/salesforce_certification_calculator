@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
     s.executables << "salesforce_certification_calculator"
     s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
     s.authors = ["Jackson Reeves"]
-    s.date = %q{2022-07-06}
+    s.date = %q{2022-07-15}
     s.description = "Salesforce resource for certifications"
     s.email = %q{jr@jacksonreeves.com}
     s.files = [
