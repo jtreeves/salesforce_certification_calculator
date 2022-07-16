@@ -47,6 +47,7 @@ class SalesforceCertificationCalculator::Exam
             @total += section.weight * section.score / 100
         end
 
+        # Round answer to 2 decimal places after initial calculation
         @total = @total.round(2)
     end
 end
