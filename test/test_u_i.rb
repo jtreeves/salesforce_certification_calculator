@@ -5,7 +5,11 @@ require "salesforce_certification_calculator"
 
 class UITest < Minitest::Test
     UI = SalesforceCertificationCalculator::UI
+    FR = SalesforceCertificationCalculator::FileReader
+    Exam = SalesforceCertificationCalculator::Exam
+    reader = FR.new
     @@ui = UI.new
+    @@exams = reader.generate_exams_list
     @@methods = @@ui.methods
     
     def test_select_list_or_new_exists
@@ -107,5 +111,104 @@ class UITest < Minitest::Test
         end
 
         assert_operator result[1].scan("Do you want to select").length, :>, 1, "should call select_list_or_new more than once if user initially inputted something other than LIST or NEW"
+    end
+
+    def test_select_specific_exam_returns_exam
+        choice = {}
+
+        OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            choice = @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_instance_of Exam, choice, "should return Exam object after calling select_specific_exam"
+    end
+
+    def test_select_specific_exam_returns_first_if_1
+        choice = {}
+
+        OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            choice = @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_equal @@exams[0], choice, "should return first Exam object in exams array after calling select_specific_exam if 1 inputted"
+    end
+
+    def test_select_specific_exam_called_once_if_1
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_equal 1, result[1].scan("Which one would you like to select").length, "should call select_specific_exam only once if user inputs 1"
+    end
+
+    def test_select_specific_exam_returns_second_if_2
+        choice = {}
+
+        OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "2"
+            string_io.rewind
+            $stdin = string_io
+            choice = @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_equal @@exams[1], choice, "should return second Exam object in exams array after calling select_specific_exam if 2 inputted"
+    end
+
+    def test_select_specific_exam_called_once_if_2
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "2"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_equal 1, result[1].scan("Which one would you like to select").length, "should call select_specific_exam only once if user inputs 2"
+    end
+
+    def test_select_specific_exam_recursion_greater
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "30"
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs number above length of options"
+    end
+
+    def test_select_specific_exam_recursion_0
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "0"
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs 0"
     end
 end
