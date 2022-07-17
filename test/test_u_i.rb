@@ -211,4 +211,40 @@ class UITest < Minitest::Test
 
         assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs 0"
     end
+
+    def test_provide_scores_returns_exam
+        result = {}
+
+        OStreamCatcher.catch do
+            string_io = StringIO.new
+
+            @@exams[0].sections.each do |section|
+                string_io.puts "70"
+            end
+
+            string_io.rewind
+            $stdin = string_io
+            result = @@ui.provide_scores(@@exams[0])
+            $stdin = STDIN
+        end
+
+        assert_instance_of Exam, result, "should return Exam object after calling provide_scores"
+    end
+
+    def test_provide_scores_prompts_user_for_each_section
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+
+            @@exams[0].sections.each do |section|
+                string_io.puts "70"
+            end
+
+            string_io.rewind
+            $stdin = string_io
+            @@ui.provide_scores(@@exams[0])
+            $stdin = STDIN
+        end
+
+        assert_equal @@exams[0].sections.length, result[1].scan("What score did you get").length, "should prompt user for input once for every section of exam parameter when call provide_scores"
+    end
 end
