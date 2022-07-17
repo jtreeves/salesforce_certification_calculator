@@ -4,9 +4,10 @@ require "salesforce_certification_calculator"
 class FileReaderTest < Minitest::Test
     FR = SalesforceCertificationCalculator::FileReader
     Exam = SalesforceCertificationCalculator::Exam
-    @@reader = FR.new
-    @@methods = @@reader.methods
-    @@exams = @@reader.generate_exams_list
+    reader = FR.new
+    @@methods = reader.methods
+    @@exams = reader.generate_exams_list
+    @@exam = reader.extract_initial_exam_data(reader.generate_exams_list[0])
     
     def test_generate_exams_list_exists
         assert_includes @@methods, :generate_exams_list, "should create an object with a method called generate_exams_list"
@@ -55,14 +56,10 @@ class FileReaderTest < Minitest::Test
     end
 
     def test_extract_initial_exam_data_returns_exam
-        exam = @@reader.extract_initial_exam_data(@@exams[0])
-
-        assert_instance_of Exam, exam, "should return Exam object when invoke extract_initial_exam_data"
+        assert_instance_of Exam, @@exam, "should return Exam object when invoke extract_initial_exam_data"
     end
 
     def test_extract_initial_exam_data_returns_sections
-        exam = @@reader.extract_initial_exam_data(@@exams[0])
-
-        assert_operator exam.sections.length, :>, 0, "should return Exam object with sections when invoke extract_initial_exam_data"
+        assert_operator @@exam.sections.length, :>, 0, "should return Exam object with sections when invoke extract_initial_exam_data"
     end
 end
