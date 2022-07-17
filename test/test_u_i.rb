@@ -247,4 +247,51 @@ class UITest < Minitest::Test
 
         assert_equal @@exams[0].sections.length, result[1].scan("What score did you get").length, "should prompt user for input once for every section of exam parameter when call provide_scores"
     end
+
+    def test_provide_all_details_manually_returns_exam
+        result = {}
+        
+        OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "My Test"
+            string_io.puts "4"
+
+            (1..4).each do |i|
+                string_io.puts "Section #{i}"
+                string_io.puts "25"
+                string_io.puts "80"
+            end
+
+            string_io.rewind
+            $stdin = string_io
+            result = @@ui.provide_all_details_manually
+            $stdin = STDIN
+        end
+
+        assert_instance_of Exam, result, "should return Exam object after calling provide_all_details_manually"
+    end
+
+    def test_provide_all_details_manually_prompts_user_2_more_than_3_times_sections
+        sections = 4
+        prompts = 2 + 3 * sections
+
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "My Test"
+            string_io.puts "#{sections}"
+
+            (1..sections).each do |i|
+                string_io.puts "Section #{i}"
+                string_io.puts "25"
+                string_io.puts "80"
+            end
+
+            string_io.rewind
+            $stdin = string_io
+            @@ui.provide_all_details_manually
+            $stdin = STDIN
+        end
+
+        assert_equal prompts, result[1].scan("\n").length, "should prompt user for input 2 more than 3 times the number of sections entered when call provide_all_details_manually"
+    end
 end
