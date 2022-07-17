@@ -1,7 +1,11 @@
 class SalesforceCertificationCalculator
-    # @!attribute [r] exam
+    # @!attribute exam
     #   @return [Exam] object being used for calculations
-    attr_reader :exam
+    # 
+    # @!attribute [r] exams
+    #   @return [Array] collection of Exam objects used for temporary storage
+    attr_accessor :exam
+    attr_reader :exams
 
     # Creates SalesforceCertificationCalculator object
     # 
@@ -59,7 +63,7 @@ class SalesforceCertificationCalculator
     #   => 87
     # 
     # @return [Number] cumulative score on exam
-    def self.determine_percentage_manually
+    def determine_percentage_manually
         choice = @ui.select_list_or_new
 
         if choice == "LIST"
