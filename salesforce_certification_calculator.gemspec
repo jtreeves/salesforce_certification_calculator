@@ -11,17 +11,37 @@ Gem::Specification.new do |s|
         "Rakefile", 
         "lib/salesforce_certification_calculator.rb", 
         "lib/salesforce_certification_calculator/exam.rb", 
-        "lib/salesforce_certification_calculator/vector.rb", 
         "lib/salesforce_certification_calculator/section.rb",
         "lib/salesforce_certification_calculator/file_reader.rb",
         "lib/salesforce_certification_calculator/u_i.rb",
-        "data/exam1.xml",
-        "data/exam2.xml"
+        "data/Administrator-Spring2022.xml",
+        "data/AdvancedAdministrator-Spring2022.xml",
+        "data/B2BSolutionArchitect-Spring2022.xml",
+        "data/B2CSolutionArchitect-Spring2022.xml",
+        "data/DataArchitect-Spring2022.xml",
+        "data/DevelopmentLifecycleAndDeploymentArchitect-Spring2022.xml",
+        "data/EducationCloudConsultant-Spring2022.xml",
+        "data/ExperienceCloudConsultant-Spring2022.xml",
+        "data/IdentityAndAccessManagementArchitect-Spring2022.xml",
+        "data/IntegrationArchitect-Spring2022.xml",
+        "data/JavaScriptDeveloperI-Spring2022.xml",
+        "data/MarketingCloudAdministrator-Spring2022.xml",
+        "data/MarketingCloudConsultant-Spring2022.xml",
+        "data/MarketingCloudDeveloper-Spring2022.xml",
+        "data/MarketingCloudEmailSpecialist-Spring2022.xml",
+        "data/PlatformAppBuilder-Spring2022.xml",
+        "data/PlatformDeveloperI-Spring2022.xml",
+        "data/PlatformDeveloperII-Spring2022.xml",
+        "data/SalesCloudConsultant-Spring2022.xml",
+        "data/ServiceCloudConsultant-Spring2022.xml",
+        "data/SharingAndVisibilityArchitect-Spring2022.xml"
     ]
     s.test_files = [
         "test/test_salesforce_certification_calculator.rb", 
         "test/test_exam.rb", 
-        "test/test_vector.rb"
+        "test/test_section.rb",
+        "test/test_file_reader.rb",
+        "test/test_u_i.rb"
     ]
     s.require_paths = ["lib", "data"]
     s.rubygems_version = %q{1.6.2}
