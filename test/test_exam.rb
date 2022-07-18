@@ -488,4 +488,11 @@ class ExamTest < Minitest::Test
     
         assert_equal "CANNOT CALCULATE", exam.total, "should set total to CANNOT CALCULATE when calculate_total called on exam with section weights that add up to more than 100"
     end
+
+    def test_calculate_total_fails_no_sections
+        exam = Exam.new
+        exam.calculate_total
+    
+        assert_equal "CANNOT CALCULATE", exam.total, "should set total to CANNOT CALCULATE when calculate_total called on exam with no sections"
+    end
 end
