@@ -48,7 +48,7 @@ class SalesforceCertificationCalculator
     #   >> total = calculator.calculate_total
     #   => 87
     # 
-    # @return [Number] cumulative score on exam
+    # @return [Number] cumulative score on exam; if sections' weights do not sum to 100, it will return an error message as a string
     def calculate_total
         @exam.calculate_total
 

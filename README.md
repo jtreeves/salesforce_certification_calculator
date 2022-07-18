@@ -24,9 +24,40 @@
 
 ## Code Examples
 
+**Final function to generate the cumulative score from all provided section data**
+```ruby
+def calculate_total
+    summed_weights = 0
+
+    @sections.each do |section|
+        summed_weights += section.weight
+        @total += section.weight * section.score / 100.0
+    end
+
+    if summed_weights != 100
+        @total = "CANNOT CALCULATE"
+    end
+end
+```
+
+**Helper function to pull data stored in a reference XML file**
+```ruby
+def extract_initial_exam_data(exam)
+        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+    names = doc.xpath("//name")
+    weights = doc.xpath("//weight")
+
+    (0..names.length-1).each do |i|
+        exam.add_section(names[i].content, weights[i].content.to_i)
+    end
+
+    return exam
+end
+```
+
 ## Testing
 
-This project has 102 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
+This project has 103 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
 
 ## Future Goals
 

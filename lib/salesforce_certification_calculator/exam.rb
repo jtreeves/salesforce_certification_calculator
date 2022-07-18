@@ -11,7 +11,7 @@ class SalesforceCertificationCalculator::Exam
     #   @return [Array] collection of Section objects for all sections of the exam
     # 
     # @!attribute [r] total
-    #   @return [Number] cumulative score for the entire exam
+    #   @return [Number] cumulative score for the entire exam; if sections' weights do not sum to 100, it will return an error message as a string
     attr_accessor :title, :file
     attr_reader :sections, :total
 
