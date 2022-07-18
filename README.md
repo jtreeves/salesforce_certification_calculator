@@ -26,4 +26,9 @@
 
 ## Testing
 
+This project has 101 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
+
 ## Future Goals
+
+- Extract score data from text file (or better yet, a PDF or directly from an email message), and use that to also determine which exam it is for in the hopes of minimizing the amount of data that the user needs to key in
+- More robust error handling and exception raising for when a user attempts to run `calculate_total` on an exam with sections whose weights do not equal 100; similar issue with interacting with the UI methods
