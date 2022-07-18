@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
     s.require_paths = ["lib", "data"]
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"
+    s.post_install_message = "Thanks for installing the SalesforceCertificationCalculator module!"
     s.summary="Calculates cumulative percentage from Salesforce certification section results"
     s.homepage="https://github.com/jtreeves/salesforce_certification_calculator"
 end

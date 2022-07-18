@@ -15,7 +15,11 @@
 
 ## Description
 
+A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam.
+
 ## Inspiration
+
+I've taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. I created this module to give users a simple way to achieve that for themselves.
 
 ## Requirements
 
@@ -82,7 +86,7 @@ end
 
 ## Testing
 
-This project has 103 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
+This project has 103 automated tests, located in the `test` folder at the root. To run them, execute `rake test`. In order to successfully run these tests, you may need to also install `stringio` and `o_stream_catcher`.
 
 ## Future Goals
 
