@@ -5,16 +5,22 @@
 **Contents**
 1. [Description](https://github.com/jtreeves/salesforce_certification_calculator#description)
 2. [Inspiration](https://github.com/jtreeves/salesforce_certification_calculator#inspiration)
-3. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
-4. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
-5. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
-6. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
-7. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
-8. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
+3. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
+4. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
+5. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
+6. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
+7. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
+8. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
+9. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
 
 ## Description
 
 ## Inspiration
+
+## Requirements
+
+- Ruby (check with `ruby -v`)
+- Nokogiri (check with `nokogiri -v`), which may be automatically installed when you install the main module
 
 ## Installation
 
