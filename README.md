@@ -18,6 +18,25 @@
 
 ## Installation
 
+### Download Package
+
+```
+gem install salesforce_certification_calculator
+```
+
+### Create Local Repository
+
+If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the repository. Ensure you already have Ruby on your local computer. (You can check this by executing `ruby -v`.)
+
+1. Fork this repository
+2. Clone it to your local computer
+3. From within your local version of the directory, build the module: `gem build salesforce_certification_calculator.gemspec`
+4. Then install that built module: `gem install ./salesforce_certification_calculator-0.1.0.gem`
+5. Open a Ruby environment to use the module: `irb`
+6. Execute any of the recently installed methods
+
+You may need to update the specific version of the build as later releases come out (e.g., `-0.1.0.gem` may need to become `-0.2.0.gem`).
+
 ## Features
 
 ## Usage
