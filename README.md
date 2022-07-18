@@ -26,7 +26,7 @@
 
 ## Testing
 
-This project has 101 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
+This project has 102 automated tests, located in the `test` folder at the root. To run them, execute `rake test`.
 
 ## Future Goals
 

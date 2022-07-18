@@ -468,13 +468,24 @@ class ExamTest < Minitest::Test
         assert_equal 100, exam.total, "should set total correctly when calculate_total called on exam with Sharing and Visibility Architect data"
     end
 
-    def test_calculate_total_fails
+    def test_calculate_total_fails_low
         exam = Exam.new
         exam.add_section("Section 1", 10, 100)
         exam.add_section("Section 2", 15, 80)
         exam.add_section("Section 3", 20, 60)
         exam.calculate_total
     
-        assert_equal "CANNOT CALCULATE", exam.total, "should set total to CANNOT CALCULATE when calculate_total called on exam with section weights do not add up to 100"
+        assert_equal "CANNOT CALCULATE", exam.total, "should set total to CANNOT CALCULATE when calculate_total called on exam with section weights that add up to less than 100"
+    end
+
+    def test_calculate_total_fails_high
+        exam = Exam.new
+        exam.add_section("Section 1", 20, 100)
+        exam.add_section("Section 2", 30, 80)
+        exam.add_section("Section 3", 40, 60)
+        exam.add_section("Section 4", 50, 70)
+        exam.calculate_total
+    
+        assert_equal "CANNOT CALCULATE", exam.total, "should set total to CANNOT CALCULATE when calculate_total called on exam with section weights that add up to more than 100"
     end
 end
