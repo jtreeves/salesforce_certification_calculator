@@ -70,12 +70,18 @@ class SalesforceCertificationCalculator
             @exams = @reader.generate_exams_list
             @exam = @ui.select_specific_exam(@exams)
             @exam = @reader.extract_initial_exam_data(@exam)
+
+            puts "You selected: #{@exam.title}"
+            puts "Enter your scores for each of the exam's #{@exam.sections.length} sections in the order you are prompted"
+            
             @exam = @ui.provide_scores(@exam)
         else
             @exam = @ui.provide_all_details_manually
         end
 
         @exam.calculate_total
+
+        puts "Your cumulative score is: #{@exam.total}%"
 
         return @exam.total
     end
