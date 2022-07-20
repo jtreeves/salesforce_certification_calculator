@@ -91,7 +91,7 @@ class SalesforceCertificationCalculator::UI
         length = gets.chomp.to_i
 
         (1..length).each do |i|
-            puts "What is the name of Section #{i}"
+            puts "What is the name of Section #{i}?"
             name = gets.chomp
             puts "How many percentage points is Section #{i} worth?"
             weight = gets.chomp.to_i
