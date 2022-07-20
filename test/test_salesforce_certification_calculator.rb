@@ -184,6 +184,6 @@ class SalesforceTest < Minitest::Test
             $stdin = STDIN
         end
 
-        assert_equal prompts, result[1].scan("\n").length, "should prompt user for input 3 more than 3 times the number of sections in exam when call determine_percentage_manually and NEW selected"
+        assert_equal prompts, result[1].scan("?").length, "should prompt user for input 3 more than 3 times the number of sections in exam when call determine_percentage_manually and NEW selected"
     end
 end
