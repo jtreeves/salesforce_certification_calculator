@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
     s.email = %q{jr@jacksonreeves.com}
     s.files = Dir.glob("lib/**/*") + Dir.glob("data/*xml") + %w(README.md Rakefile)
     s.test_files = Dir.glob("test/test_*")
-    s.add_dependency("nokogiri")
+    s.add_dependency("nokogiri", "~> 1.13")
     s.require_paths = ["lib", "data"]
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"
