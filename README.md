@@ -7,8 +7,8 @@
 2. [Inspiration](https://github.com/jtreeves/salesforce_certification_calculator#inspiration)
 3. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
 4. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
-5. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
-6. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
+5. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
+6. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
 7. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
 8. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
 9. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
@@ -47,9 +47,17 @@ If you have trouble downloading the package or just want to play around with the
 
 You may need to update the specific version of the build as later releases come out (e.g., `-0.1.0.gem` may need to become `-0.2.0.gem`).
 
-## Features
-
 ## Usage
+
+1. Open a Ruby environment to use the module: `irb`
+2. Require the package: `require 'salesforce_certification_calculator'`
+3. Create a new calculator to use: `calculator = SalesforceCertificationCalculator.new`
+4. Use the main method to provide data and generate your cumulative score: `calculator.determine_percentage_manually`
+5. Fill in the data in response to the questions as they're presented, and the final output will be your cumulative score
+
+Of course, you may use any of the other methods provided by the package, but `determine_percentage_manually` is the core method.
+
+## Features
 
 ## Code Examples
 
@@ -93,3 +101,4 @@ This project has 103 automated tests, located in the `test` folder at the root. 
 - Extract score data from text file (or better yet, a PDF or directly from an email message), and use that to also determine which exam it is for in the hopes of minimizing the amount of data that the user needs to key in
 - More robust error handling and exception raising for when a user attempts to run `calculate_total` on an exam with sections whose weights do not equal 100; similar issue with interacting with the UI methods
 - A **Rails** app to live in the browser an facilitate much of the above
+- More aesthetically appealing documentation pages
