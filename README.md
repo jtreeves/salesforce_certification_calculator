@@ -85,7 +85,7 @@ end
 **Helper function to pull data stored in a reference XML file**
 ```ruby
 def extract_initial_exam_data(exam)
-        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+    doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
     names = doc.xpath("//name")
     weights = doc.xpath("//weight")
 
