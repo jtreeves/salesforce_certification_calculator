@@ -5,10 +5,10 @@
 **Contents**
 1. [Description](https://github.com/jtreeves/salesforce_certification_calculator#description)
 2. [Inspiration](https://github.com/jtreeves/salesforce_certification_calculator#inspiration)
-3. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
-4. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
-5. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
-6. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
+3. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
+4. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
+5. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
+6. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
 7. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
 8. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
 9. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
@@ -20,6 +20,13 @@ A **Ruby** gem module for taking all the sections' weights and scores provided b
 ## Inspiration
 
 I've taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. I created this module to give users a simple way to achieve that for themselves.
+
+## Features
+
+- Archive of files with key details for 21 current exams, including their sections and weights
+- File reading functionality
+- User interface for the CLI to provide prompts to walk user through the input process
+- Methods for calculating the cumulative total and for walking the user through all stages of data collection
 
 ## Requirements
 
@@ -56,8 +63,6 @@ You may need to update the specific version of the build as later releases come 
 5. Fill in the data in response to the questions as they're presented, and the final output will be your cumulative score
 
 Of course, you may use any of the other methods provided by the package, but `determine_percentage_manually` is the core method.
-
-## Features
 
 ## Code Examples
 
