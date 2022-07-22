@@ -20,7 +20,7 @@ A **Ruby** gem module for taking all the sections' weights and scores provided b
 
 ## Inspiration
 
-I've taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. I created this module to give users a simple way to achieve that for themselves.
+I've taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. Previously, I would use a calculator to manually enter the data. However, given how many sections an exam may have, I can mis-enter some data. I created this module to give users a simple way to achieve that for themselves.
 
 ## Features
 
@@ -110,5 +110,5 @@ This project has 103 automated tests, located in the `test` folder at the root. 
 
 - Extract score data from text file (or better yet, a PDF or directly from an email message), and use that to also determine which exam it is for in the hopes of minimizing the amount of data that the user needs to key in
 - More robust error handling and exception raising for when a user attempts to run `calculate_total` on an exam with sections whose weights do not equal 100; similar issue with interacting with the UI methods
-- A **Rails** app to live in the browser an facilitate much of the above
+- A **Rails** app to live in the browser and facilitate much of the above
 - More aesthetically appealing documentation pages
