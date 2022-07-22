@@ -547,7 +547,7 @@
       
         &mdash;
         <div class='inline'>
-<p>cumulative score on exam</p>
+<p>cumulative score on exam; if sections’ weights do not sum to 100, it will return an error message as a string</p>
 </div>
       
     </li>
@@ -652,7 +652,13 @@
 78
 79
 80
-81</pre>
+81
+82
+83
+84
+85
+86
+87</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 66</span>
@@ -664,12 +670,18 @@
         <span class='ivar'>@exams</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_generate_exams_list'>generate_exams_list</span>
         <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_select_specific_exam'>select_specific_exam</span><span class='lparen'>(</span><span class='ivar'>@exams</span><span class='rparen'>)</span>
         <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
+
+        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You selected: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter your scores for each of the exam&#39;s </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_sections'>sections</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> sections in the order you are prompted</span><span class='tstring_end'>&quot;</span></span>
+        
         <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_provide_scores'>provide_scores</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
         <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_provide_all_details_manually'>provide_all_details_manually</span>
     <span class='kw'>end</span>
 
     <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_calculate_total'>calculate_total</span>
+
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Your cumulative score is: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span><span class='embexpr_end'>}</span><span class='tstring_content'>%</span><span class='tstring_end'>&quot;</span></span>
 
     <span class='kw'>return</span> <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span>
 <span class='kw'>end</span></pre>
@@ -814,7 +826,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 16 23:48:08 2022 by
+  Generated on Thu Jul 21 21:06:21 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

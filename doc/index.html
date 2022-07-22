@@ -62,27 +62,130 @@
 
 <p><em>Calculates cumulative percentage from Salesforce certification section results</em></p>
 
-<p><strong>Contents</strong> 1. <a href="https://github.com/jtreeves/salesforce_certification_calculator#description">Description</a> 2. <a href="https://github.com/jtreeves/salesforce_certification_calculator#inspiration">Inspiration</a> 3. <a href="https://github.com/jtreeves/salesforce_certification_calculator#installation">Installation</a> 4. <a href="https://github.com/jtreeves/salesforce_certification_calculator#features">Features</a> 5. <a href="https://github.com/jtreeves/salesforce_certification_calculator#usage">Usage</a> 6. <a href="https://github.com/jtreeves/salesforce_certification_calculator#code-examples">Code Examples</a> 7. <a href="https://github.com/jtreeves/salesforce_certification_calculator#testing">Testing</a> 8. <a href="https://github.com/jtreeves/salesforce_certification_calculator#future-goals">Future Goals</a></p>
+<p><strong>Contents</strong> 1. <a href="https://github.com/jtreeves/salesforce_certification_calculator#description">Description</a> 2. <a href="https://github.com/jtreeves/salesforce_certification_calculator#inspiration">Inspiration</a> 3. <a href="https://github.com/jtreeves/salesforce_certification_calculator#features">Features</a> 4. <a href="https://github.com/jtreeves/salesforce_certification_calculator#requirements">Requirements</a> 5. <a href="https://github.com/jtreeves/salesforce_certification_calculator#installation">Installation</a> 6. <a href="https://github.com/jtreeves/salesforce_certification_calculator#usage">Usage</a> 7. <a href="https://github.com/jtreeves/salesforce_certification_calculator#documentation">Documentation</a> 8. <a href="https://github.com/jtreeves/salesforce_certification_calculator#code-examples">Code Examples</a> 9. <a href="https://github.com/jtreeves/salesforce_certification_calculator#testing">Testing</a> 10. <a href="https://github.com/jtreeves/salesforce_certification_calculator#future-goals">Future Goals</a></p>
 
 <h2 id="label-Description">Description</h2>
 
+<p>A <strong>Ruby</strong> gem module for taking all the sections’ weights and scores provided by <strong>Salesforce</strong> and using them to generate a cumulative score for the entire exam. Built using <a href="https://guides.rubygems.org/make-your-own-gem/">Ruby’s guide to making gems</a>.</p>
+
 <h2 id="label-Inspiration">Inspiration</h2>
+
+<p>I’ve taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. I created this module to give users a simple way to achieve that for themselves.</p>
+
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>Archive of files with key details for 21 current exams, including their sections and weights</p>
+</li><li>
+<p>File reading functionality</p>
+</li><li>
+<p>User interface for the CLI to provide prompts to walk user through the input process</p>
+</li><li>
+<p>Methods for calculating the cumulative total and for walking the user through all stages of data collection</p>
+</li></ul>
+
+<h2 id="label-Requirements">Requirements</h2>
+<ul><li>
+<p>Ruby (check with <code>ruby -v</code>)</p>
+</li><li>
+<p>Nokogiri (check with <code>nokogiri -v</code>), which may be automatically installed when you install the main module</p>
+</li></ul>
 
 <h2 id="label-Installation">Installation</h2>
 
-<h2 id="label-Features">Features</h2>
+<h3 id="label-Download+Package">Download Package</h3>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_salesforce_certification_calculator'>salesforce_certification_calculator</span>
+</code></pre>
+
+<h3 id="label-Create+Local+Repository">Create Local Repository</h3>
+
+<p>If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the repository. Ensure you already have Ruby on your local computer. (You can check this by executing <code>ruby -v</code>.)</p>
+<ol><li>
+<p>Fork this repository</p>
+</li><li>
+<p>Clone it to your local computer</p>
+</li><li>
+<p>From within your local version of the directory, build the module: <code>gem build salesforce_certification_calculator.gemspec</code></p>
+</li><li>
+<p>Then install that built module: <code>gem install ./salesforce_certification_calculator-0.1.0.gem</code></p>
+</li><li>
+<p>Open a Ruby environment to use the module: <code>irb</code></p>
+</li><li>
+<p>Execute any of the recently installed methods</p>
+</li></ol>
+
+<p>You may need to update the specific version of the build as later releases come out (e.g., <code>-0.1.0.gem</code> may need to become <code>-0.2.0.gem</code>).</p>
 
 <h2 id="label-Usage">Usage</h2>
+<ol><li>
+<p>Open a Ruby environment to use the module: <code>irb</code></p>
+</li><li>
+<p>Require the package: <code>require &#39;salesforce_certification_calculator&#39;</code></p>
+</li><li>
+<p>Create a new calculator to use: <code>calculator = SalesforceCertificationCalculator.new</code></p>
+</li><li>
+<p>Use the main method to provide data and generate your cumulative score: <code>calculator.determine_percentage_manually</code></p>
+</li><li>
+<p>Fill in the data in response to the questions as they’re presented, and the final output will be your cumulative score</p>
+</li></ol>
+
+<p>Of course, you may use any of the other methods provided by the package, but <code>determine_percentage_manually</code> is the core method.</p>
+
+<h2 id="label-Documentation">Documentation</h2>
+
+<p>This project uses <strong>YARD</strong> for documentation generation. To view the docs, go to the <code>doc</code> folder. To generate the docs yourself, execute <code>rake yard</code> in the CLI from the root of your local copy of the project.</p>
 
 <h2 id="label-Code+Examples">Code Examples</h2>
 
+<p><strong>Final function to generate the cumulative score from all provided section data</strong></p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>def</span> <span class='id identifier rubyid_calculate_total'>calculate_total</span>
+    <span class='id identifier rubyid_summed_weights'>summed_weights</span> <span class='op'>=</span> <span class='int'>0</span>
+
+    <span class='ivar'>@sections</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_section'>section</span><span class='op'>|</span>
+        <span class='id identifier rubyid_summed_weights'>summed_weights</span> <span class='op'>+=</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span>
+        <span class='ivar'>@total</span> <span class='op'>+=</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span> <span class='op'>*</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_score'>score</span> <span class='op'>/</span> <span class='float'>100.0</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>if</span> <span class='id identifier rubyid_summed_weights'>summed_weights</span> <span class='op'>!=</span> <span class='int'>100</span>
+        <span class='ivar'>@total</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>CANNOT CALCULATE</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p><strong>Helper function to pull data stored in a reference XML file</strong></p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>def</span> <span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span><span class='lparen'>(</span><span class='id identifier rubyid_exam'>exam</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='const'>Nokogiri</span><span class='op'>::</span><span class='const'>XML</span><span class='lparen'>(</span><span class='id identifier rubyid_f'>f</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//name</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_weights'>weights</span> <span class='op'>=</span> <span class='id identifier rubyid_doc'>doc</span><span class='period'>.</span><span class='id identifier rubyid_xpath'>xpath</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>//weight</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+    <span class='lparen'>(</span><span class='int'>0</span><span class='op'>..</span><span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span>
+        <span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_add_section'>add_section</span><span class='lparen'>(</span><span class='id identifier rubyid_names'>names</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='comma'>,</span> <span class='id identifier rubyid_weights'>weights</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_content'>content</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>return</span> <span class='id identifier rubyid_exam'>exam</span>
+<span class='kw'>end</span>
+</code></pre>
+
 <h2 id="label-Testing">Testing</h2>
 
+<p>This project has 103 automated tests, located in the <code>test</code> folder at the root. To run them, execute <code>rake test</code>. In order to successfully run these tests, you may need to also install <code>stringio</code> and <code>o_stream_catcher</code>.</p>
+
 <h2 id="label-Future+Goals">Future Goals</h2>
+<ul><li>
+<p>Extract score data from text file (or better yet, a PDF or directly from an email message), and use that to also determine which exam it is for in the hopes of minimizing the amount of data that the user needs to key in</p>
+</li><li>
+<p>More robust error handling and exception raising for when a user attempts to run <code>calculate_total</code> on an exam with sections whose weights do not equal 100; similar issue with interacting with the UI methods</p>
+</li><li>
+<p>A <strong>Rails</strong> app to live in the browser an facilitate much of the above</p>
+</li><li>
+<p>More aesthetically appealing documentation pages</p>
+</li></ul>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jul 16 23:48:08 2022 by
+  Generated on Thu Jul 21 21:06:21 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
