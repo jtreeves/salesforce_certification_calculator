@@ -16,7 +16,7 @@
 
 ## Description
 
-A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam. Built using [Ruby's guide to making gems](https://guides.rubygems.org/make-your-own-gem/).
+A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam. Built using [Ruby's guide to making gems](https://guides.rubygems.org/make-your-own-gem/). View the details on the [published module](https://rubygems.org/gems/salesforce_certification_calculator) on Ruby's site.
 
 ## Inspiration
 
@@ -67,7 +67,7 @@ Of course, you may use any of the other methods provided by the package, but `de
 
 ## Documentation
 
-This project uses **YARD** for documentation generation. To view the docs, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
+This project uses **YARD** for documentation generation. To view the published form, see the [documentation](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.0) on the YARD site. To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
 
 ## Code Examples
 
