@@ -9,13 +9,14 @@
 4. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
 5. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
 6. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
-7. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
-8. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
-9. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
+7. [Documentation](https://github.com/jtreeves/salesforce_certification_calculator#documentation)
+8. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
+9. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
+10. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
 
 ## Description
 
-A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam.
+A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam. Built using [Ruby's guide to making gems](https://guides.rubygems.org/make-your-own-gem/).
 
 ## Inspiration
 
@@ -63,6 +64,10 @@ You may need to update the specific version of the build as later releases come 
 5. Fill in the data in response to the questions as they're presented, and the final output will be your cumulative score
 
 Of course, you may use any of the other methods provided by the package, but `determine_percentage_manually` is the core method.
+
+## Documentation
+
+This project uses **YARD** for documentation generation. To view the docs, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
 
 ## Code Examples
 
