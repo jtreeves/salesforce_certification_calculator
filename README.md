@@ -3,16 +3,16 @@
 *Calculates cumulative percentage from Salesforce certification section results*
 
 **Contents**
-1. [Description](https://github.com/jtreeves/salesforce_certification_calculator#description)
-2. [Inspiration](https://github.com/jtreeves/salesforce_certification_calculator#inspiration)
-3. [Features](https://github.com/jtreeves/salesforce_certification_calculator#features)
-4. [Requirements](https://github.com/jtreeves/salesforce_certification_calculator#requirements)
-5. [Installation](https://github.com/jtreeves/salesforce_certification_calculator#installation)
-6. [Usage](https://github.com/jtreeves/salesforce_certification_calculator#usage)
-7. [Documentation](https://github.com/jtreeves/salesforce_certification_calculator#documentation)
-8. [Code Examples](https://github.com/jtreeves/salesforce_certification_calculator#code-examples)
-9. [Testing](https://github.com/jtreeves/salesforce_certification_calculator#testing)
-10. [Future Goals](https://github.com/jtreeves/salesforce_certification_calculator#future-goals)
+1. [Description](#description)
+2. [Inspiration](#inspiration)
+3. [Features](#features)
+4. [Requirements](#requirements)
+5. [Installation](#installation)
+6. [Usage](#usage)
+7. [Documentation](#documentation)
+8. [Code Examples](#code-examples)
+9. [Testing](#testing)
+10. [Future Goals](#future-goals)
 
 ## Description
 
@@ -44,7 +44,7 @@ gem install salesforce_certification_calculator
 
 ### Create Local Repository
 
-If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the repository. Ensure you already have Ruby on your local computer. (You can check this by executing `ruby -v`.)
+If you have trouble downloading the package or just want to play around with the code yourself, you can clone down [the repository from GitHub](https://github.com/jtreeves/salesforce_certification_calculator). Ensure you already have Ruby on your local computer. (You can check this by executing `ruby -v`.)
 
 1. Fork this repository
 2. Clone it to your local computer
@@ -67,7 +67,7 @@ Of course, you may use any of the other methods provided by the package, but `de
 
 ## Documentation
 
-This project uses **YARD** for documentation generation. To view the published form, see the [documentation](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.0) on the YARD site. To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
+This project uses **YARD** for documentation generation. To view the published form, see [the documentation on the RubyDoc site](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.1). To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
 
 ## Code Examples
 
