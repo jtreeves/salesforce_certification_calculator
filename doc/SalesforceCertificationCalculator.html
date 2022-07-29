@@ -560,14 +560,14 @@
       <pre class="lines">
 
 
+51
 52
 53
 54
-55
-56</pre>
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_total'>calculate_total</span>
     <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_calculate_total'>calculate_total</span>
@@ -637,6 +637,7 @@
       <pre class="lines">
 
 
+65
 66
 67
 68
@@ -657,11 +658,10 @@
 83
 84
 85
-86
-87</pre>
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_determine_percentage_manually'>determine_percentage_manually</span>
     <span class='id identifier rubyid_choice'>choice</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_select_list_or_new'>select_list_or_new</span>
@@ -718,31 +718,12 @@
 </div></p>
       
       <pre class="example code"><code>&gt;&gt; calculator = SalesforceCertificationCalculator.new
-&gt;&gt; exams = calculator.generate_exams_list
-&gt;&gt; exam = calculator.extract_exam_data(exams[0])
+&gt;&gt; calculator.generate_exams_list
+&gt;&gt; calculator.exam = calculator.exams[1]
+&gt;&gt; calculator.extract_exam_data
 =&gt; &lt;SalesforceCertificationCalculator::Exam 0x000987&gt;</code></pre>
     
   </div>
-<p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>exam</span>
-      
-      
-        <span class='type'>(<tt><span class='object_link'><a href="SalesforceCertificationCalculator/Exam.html" title="SalesforceCertificationCalculator::Exam (class)">Exam</a></span></tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>object, containing name and file properties, to use to get full data</p>
-</div>
-      
-    </li>
-  
-</ul>
 
 
 </div><table class="source_code">
@@ -751,12 +732,12 @@
       <pre class="lines">
 
 
+39
 40
-41
-42</pre>
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span>
     <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
@@ -826,7 +807,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Jul 21 21:06:21 2022 by
+  Generated on Fri Jul 29 00:11:02 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

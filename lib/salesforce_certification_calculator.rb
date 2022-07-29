@@ -32,11 +32,10 @@ class SalesforceCertificationCalculator
     # 
     # @example Retrieve Exam Data
     #   >> calculator = SalesforceCertificationCalculator.new
-    #   >> exams = calculator.generate_exams_list
-    #   >> exam = calculator.extract_exam_data(exams[0])
+    #   >> calculator.generate_exams_list
+    #   >> calculator.exam = calculator.exams[1]
+    #   >> calculator.extract_exam_data
     #   => <SalesforceCertificationCalculator::Exam 0x000987>
-    # 
-    # @param exam [Exam] object, containing name and file properties, to use to get full data
     def extract_initial_exam_data
         @exam = @reader.extract_initial_exam_data(@exam)
     end

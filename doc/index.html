@@ -62,15 +62,15 @@
 
 <p><em>Calculates cumulative percentage from Salesforce certification section results</em></p>
 
-<p><strong>Contents</strong> 1. <a href="https://github.com/jtreeves/salesforce_certification_calculator#description">Description</a> 2. <a href="https://github.com/jtreeves/salesforce_certification_calculator#inspiration">Inspiration</a> 3. <a href="https://github.com/jtreeves/salesforce_certification_calculator#features">Features</a> 4. <a href="https://github.com/jtreeves/salesforce_certification_calculator#requirements">Requirements</a> 5. <a href="https://github.com/jtreeves/salesforce_certification_calculator#installation">Installation</a> 6. <a href="https://github.com/jtreeves/salesforce_certification_calculator#usage">Usage</a> 7. <a href="https://github.com/jtreeves/salesforce_certification_calculator#documentation">Documentation</a> 8. <a href="https://github.com/jtreeves/salesforce_certification_calculator#code-examples">Code Examples</a> 9. <a href="https://github.com/jtreeves/salesforce_certification_calculator#testing">Testing</a> 10. <a href="https://github.com/jtreeves/salesforce_certification_calculator#future-goals">Future Goals</a></p>
+<p><strong>Contents</strong> 1. <a href="#description">Description</a> 2. <a href="#inspiration">Inspiration</a> 3. <a href="#features">Features</a> 4. <a href="#requirements">Requirements</a> 5. <a href="#installation">Installation</a> 6. <a href="#usage">Usage</a> 7. <a href="#documentation">Documentation</a> 8. <a href="#code-examples">Code Examples</a> 9. <a href="#testing">Testing</a> 10. <a href="#future-goals">Future Goals</a></p>
 
 <h2 id="label-Description">Description</h2>
 
-<p>A <strong>Ruby</strong> gem module for taking all the sections’ weights and scores provided by <strong>Salesforce</strong> and using them to generate a cumulative score for the entire exam. Built using <a href="https://guides.rubygems.org/make-your-own-gem/">Ruby’s guide to making gems</a>.</p>
+<p>A <strong>Ruby</strong> gem module for taking all the sections’ weights and scores provided by <strong>Salesforce</strong> and using them to generate a cumulative score for the entire exam. Built using <a href="https://guides.rubygems.org/make-your-own-gem/">Ruby’s guide to making gems</a>. View the details on the <a href="https://rubygems.org/gems/salesforce_certification_calculator">published module on Ruby’s site</a>.</p>
 
 <h2 id="label-Inspiration">Inspiration</h2>
 
-<p>I’ve taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. I created this module to give users a simple way to achieve that for themselves.</p>
+<p>I’ve taken a few Salesforce certification exams in my day, and I was always annoyed that even though Salesforce provides you with your score on a given section, it refuses to provide you with a simple cumulative score. It does tell you if you passed of failed, but it would be useful to know by exactly how much. Previously, I would use a calculator to manually enter the data. However, given how many sections an exam may have, I can mis-enter some data. I created this module to give users a simple way to achieve that for themselves.</p>
 
 <h2 id="label-Features">Features</h2>
 <ul><li>
@@ -92,6 +92,26 @@
 
 <h2 id="label-Installation">Installation</h2>
 
+<h3 id="label-Set+Up+Environment">Set Up Environment</h3>
+<ol><li>
+<p>Install <code>rbenv</code> via Homebrew: <code>brew install rbenv</code></p>
+</li><li>
+<p>Update your <code>.zshrc</code> config file:</p>
+
+<pre class="code ruby"><code class="ruby">export PATH=&quot;/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH&quot;
+eval &quot;$(rbenv init - zsh)&quot;
+export PATH=$HOME/.rbenv/shims:$PATH
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+</code></pre>
+</li><li>
+<p>Install latest version of Ruby via the <code>rbenv</code> package: <code>rbenv install 3.1.2</code></p>
+</li><li>
+<p>Set global version of Ruby via the <code>rbenv</code> package: <code>rbenv global 3.1.2</code></p>
+</li><li>
+<p>Fix <code>racc</code> version: <code>gem pristine racc --version 1.6.0</code></p>
+</li></ol>
+
 <h3 id="label-Download+Package">Download Package</h3>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_salesforce_certification_calculator'>salesforce_certification_calculator</span>
@@ -99,7 +119,7 @@
 
 <h3 id="label-Create+Local+Repository">Create Local Repository</h3>
 
-<p>If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the repository. Ensure you already have Ruby on your local computer. (You can check this by executing <code>ruby -v</code>.)</p>
+<p>If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the <a href="https://github.com/jtreeves/salesforce_certification_calculator">repository on GitHub</a>. Ensure you already have Ruby on your local computer. (You can check this by executing <code>ruby -v</code>.)</p>
 <ol><li>
 <p>Fork this repository</p>
 </li><li>
@@ -107,14 +127,14 @@
 </li><li>
 <p>From within your local version of the directory, build the module: <code>gem build salesforce_certification_calculator.gemspec</code></p>
 </li><li>
-<p>Then install that built module: <code>gem install ./salesforce_certification_calculator-0.1.0.gem</code></p>
+<p>Then install that built module: <code>gem install ./salesforce_certification_calculator-0.1.2.gem</code></p>
 </li><li>
 <p>Open a Ruby environment to use the module: <code>irb</code></p>
 </li><li>
 <p>Execute any of the recently installed methods</p>
 </li></ol>
 
-<p>You may need to update the specific version of the build as later releases come out (e.g., <code>-0.1.0.gem</code> may need to become <code>-0.2.0.gem</code>).</p>
+<p>You may need to update the specific version of the build as later releases come out (e.g., <code>-0.1.2.gem</code> may need to become <code>-0.2.0.gem</code>).</p>
 
 <h2 id="label-Usage">Usage</h2>
 <ol><li>
@@ -133,7 +153,7 @@
 
 <h2 id="label-Documentation">Documentation</h2>
 
-<p>This project uses <strong>YARD</strong> for documentation generation. To view the docs, go to the <code>doc</code> folder. To generate the docs yourself, execute <code>rake yard</code> in the CLI from the root of your local copy of the project.</p>
+<p>This project uses <strong>YARD</strong> for documentation generation. To view the published form, see the <a href="https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.2">documentation on the RubyDoc site</a>. To view the docs locally, go to the <code>doc</code> folder. To generate the docs yourself, execute <code>rake yard</code> in the CLI from the root of your local copy of the project.</p>
 
 <h2 id="label-Code+Examples">Code Examples</h2>
 
@@ -178,14 +198,14 @@
 </li><li>
 <p>More robust error handling and exception raising for when a user attempts to run <code>calculate_total</code> on an exam with sections whose weights do not equal 100; similar issue with interacting with the UI methods</p>
 </li><li>
-<p>A <strong>Rails</strong> app to live in the browser an facilitate much of the above</p>
+<p>A <strong>Rails</strong> app to live in the browser and facilitate much of the above</p>
 </li><li>
 <p>More aesthetically appealing documentation pages</p>
 </li></ul>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Jul 21 21:06:21 2022 by
+  Generated on Fri Jul 29 00:11:02 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>
