@@ -64,11 +64,11 @@ If you have trouble downloading the package or just want to play around with the
 1. Fork this repository
 2. Clone it to your local computer
 3. From within your local version of the directory, build the module: `gem build salesforce_certification_calculator.gemspec`
-4. Then install that built module: `gem install ./salesforce_certification_calculator-0.1.2.gem`
+4. Then install that built module: `gem install ./salesforce_certification_calculator-0.1.4.gem`
 5. Open a Ruby environment to use the module: `irb`
 6. Execute any of the recently installed methods
 
-You may need to update the specific version of the build as later releases come out (e.g., `-0.1.2.gem` may need to become `-0.2.0.gem`).
+You may need to update the specific version of the build as later releases come out (e.g., `-0.1.4.gem` may need to become `-0.2.0.gem`).
 
 ## Usage
 
@@ -82,7 +82,7 @@ Of course, you may use any of the other methods provided by the package, but `de
 
 ## Documentation
 
-This project uses **YARD** for documentation generation. To view the published form, see the [documentation on the RubyDoc site](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.2). To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
+This project uses **YARD** for documentation generation. To view the published form, see the [documentation on the RubyDoc site](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.4). To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
 
 ## Code Examples
 
