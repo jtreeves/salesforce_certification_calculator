@@ -12,8 +12,8 @@ class SalesforceCertificationCalculator::FileReader
         gems_path = ENV["HOME"] + "/gems/gems"
         all_gems = Dir.children(gems_path)
 
+        # Create list of all versions of module installed on user's computer
         all_gems.each do |gem|
-            # Create list of all versions of module installed on user's computer
             if gem.include? "salesforce_certification_calculator"
                 sfc_gems.push(gem)
             end
@@ -39,6 +39,7 @@ class SalesforceCertificationCalculator::FileReader
         exams = []
         files = Dir.glob("data/*xml", base: @base_path)
 
+        # Create list of all exams, including their titles and file paths
         files.each do |file|
             exam = SFC::Exam.new
             file_path = @base_path + "/" + file
@@ -69,6 +70,7 @@ class SalesforceCertificationCalculator::FileReader
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
 
+        # Add all sections' names and weights to existing exam data
         (0..names.length-1).each do |i|
             exam.add_section(names[i].content, weights[i].content.to_i)
         end

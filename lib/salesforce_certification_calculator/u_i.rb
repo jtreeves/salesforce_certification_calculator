@@ -13,6 +13,7 @@ class SalesforceCertificationCalculator::UI
         puts "Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?"
         choice = gets.chomp
 
+        # Only return value if user selected one of the two provided options; otherwise, recursively recall function
         if choice == "LIST" || choice == "NEW"
             return choice
         else
@@ -35,6 +36,7 @@ class SalesforceCertificationCalculator::UI
     def select_specific_exam(exams)
         puts "Your choices are:"
 
+        # List exam options
         exams.each do |exam|
             puts "#{exams.find_index(exam) + 1} - #{exam.title}"
         end
@@ -42,6 +44,7 @@ class SalesforceCertificationCalculator::UI
         puts "Which one would you like to select? Enter the number before the exam name:"
         choice = gets.chomp.to_i
 
+        # Only return value if user inputted number within range; otherwise, recursively recall function
         if choice.between?(1, exams.length)
             return exams[choice - 1]
         else
@@ -65,6 +68,7 @@ class SalesforceCertificationCalculator::UI
     def provide_scores(exam)
         sections = exam.sections
 
+        # Get scores for each section from the user
         sections.each do |section|
             puts "#{section.name} is worth #{section.weight}%"
             puts "What score did you get on that section? (enter an integer)"
@@ -90,6 +94,7 @@ class SalesforceCertificationCalculator::UI
         puts "How many sections does it have?"
         length = gets.chomp.to_i
 
+        # Get names, weights, and scores for each section of the exam from the user
         (1..length).each do |i|
             puts "What is the name of Section #{i}?"
             name = gets.chomp

@@ -48,6 +48,7 @@ class SalesforceCertificationCalculator::Exam
     def calculate_total
         summed_weights = 0
 
+        # Sum weighted scores of all sections
         @sections.each do |section|
             summed_weights += section.weight
             @total += section.weight * section.score / 100.0

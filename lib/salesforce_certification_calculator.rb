@@ -66,6 +66,7 @@ class SalesforceCertificationCalculator
         choice = @ui.select_list_or_new
 
         if choice == "LIST"
+            # Get list of exams, prompt user to select one, then require user to provide their scores for all the exam's sections
             @exams = @reader.generate_exams_list
             @exam = @ui.select_specific_exam(@exams)
             @exam = @reader.extract_initial_exam_data(@exam)
@@ -75,6 +76,7 @@ class SalesforceCertificationCalculator
             
             @exam = @ui.provide_scores(@exam)
         else
+            # Allow user to manually enter all data themselves without the aid of the data already stored in the module's XML files
             @exam = @ui.provide_all_details_manually
         end
 
