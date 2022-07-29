@@ -8,18 +8,22 @@ class SalesforceCertificationCalculator::FileReader
     def initialize
         sfc_gems = []
 
+        # Get full path to where Ruby gems are stored on user's computer, starting at the base
         gems_path = ENV["HOME"] + "/gems/gems"
         all_gems = Dir.children(gems_path)
 
         all_gems.each do |gem|
+            # Create list of all versions of module installed on user's computer
             if gem.include? "salesforce_certification_calculator"
                 sfc_gems.push(gem)
             end
         end
 
+        # Determine most recent version of module available
         sfc_gems.sort
         latest_sfc = sfc_gems[sfc_gems.length - 1]
 
+        # Set path variable for use by the class's methods
         @base_path = gems_path + "/" + latest_sfc
     end
 
