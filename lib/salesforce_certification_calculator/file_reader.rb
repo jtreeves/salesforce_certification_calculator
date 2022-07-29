@@ -1,6 +1,28 @@
 class SalesforceCertificationCalculator::FileReader
     SFC = SalesforceCertificationCalculator
 
+    # Creates FileReader object by establishing a base path
+    # 
+    # @example Create FileReader Object
+    #   >> fr = FileReader.new
+    def initialize
+        sfc_gems = []
+
+        gems_path = ENV["HOME"] + "/gems/gems"
+        all_gems = Dir.children(gems_path)
+
+        all_gems.each do |gem|
+            if gem.include? "salesforce_certification_calculator"
+                sfc_gems.push(gem)
+            end
+        end
+
+        sfc_gems.sort
+        latest_sfc = sfc_gems[sfc_gems.length - 1]
+
+        @base_path = gems_path + "/" + latest_sfc
+    end
+
     # Gets list of all exams in the database, including their names and file paths
     # 
     # @example Retrieve Exams
@@ -11,11 +33,12 @@ class SalesforceCertificationCalculator::FileReader
     # @return [Array] collection of Exam objects
     def generate_exams_list
         exams = []
-        files = Dir.glob("data/*xml")
+        files = Dir.glob("data/*xml", base: @base_path)
 
         files.each do |file|
             exam = SFC::Exam.new
-            doc = File.open(file) { |f| Nokogiri::XML(f) }
+            file_path = @base_path + "/" + file
+            doc = File.open(file_path) { |f| Nokogiri::XML(f) }
             title = doc.at_xpath("//title")
             exam.title = title.content
             exam.file = file
@@ -37,7 +60,8 @@ class SalesforceCertificationCalculator::FileReader
     # 
     # @return [Exam] object with not only name and file, but also all sections, with their names and weights
     def extract_initial_exam_data(exam)
-        doc = File.open(exam.file) { |f| Nokogiri::XML(f) }
+        file_path = @base_path + "/" + exam.file
+        doc = File.open(file_path) { |f| Nokogiri::XML(f) }
         names = doc.xpath("//name")
         weights = doc.xpath("//weight")
 
