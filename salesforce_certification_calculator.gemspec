@@ -46,12 +46,12 @@ Gem::Specification.new do |s|
         "test/test_u_i.rb"
     ]
     s.add_runtime_dependency("nokogiri", "~> 1.13")
-    s.add_development_dependency("rake", ">= 13.0")
-    s.add_development_dependency("yard", ">= 0.9")
-    s.add_development_dependency("stringio", ">= 3.0")
-    s.add_development_dependency("o_stream_catcher", ">= 0.0.1")
+    s.add_development_dependency("rake", "~> 13.0")
+    s.add_development_dependency("yard", "~> 0.9")
+    s.add_development_dependency("stringio", "~> 3.0")
+    s.add_development_dependency("o_stream_catcher", "~> 0.0.1")
     s.require_paths = ["lib", "data"]
-    s.required_ruby_version = ">= 2.0"
+    s.required_ruby_version = "~> 2.0"
     s.rubygems_version = %q{1.6.2}
     s.license = "MIT"
     s.post_install_message = "Thanks for installing the SalesforceCertificationCalculator module!"
