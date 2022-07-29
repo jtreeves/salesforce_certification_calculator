@@ -16,7 +16,7 @@
 
 ## Description
 
-A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam. Built using [Ruby's guide to making gems](https://guides.rubygems.org/make-your-own-gem/). View the details on the [published module](https://rubygems.org/gems/salesforce_certification_calculator) on Ruby's site.
+A **Ruby** gem module for taking all the sections' weights and scores provided by **Salesforce** and using them to generate a cumulative score for the entire exam. Built using [Ruby's guide to making gems](https://guides.rubygems.org/make-your-own-gem/). View the details on the [published module on Ruby's site](https://rubygems.org/gems/salesforce_certification_calculator).
 
 ## Inspiration
 
@@ -36,6 +36,21 @@ I've taken a few Salesforce certification exams in my day, and I was always anno
 
 ## Installation
 
+### Set Up Environment
+
+1. Install `rbenv` via Homebrew: `brew install rbenv`
+2. Update your `.zshrc` config file:
+```bash
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.1.0/bin:$PATH"
+eval "$(rbenv init - zsh)"
+export PATH=$HOME/.rbenv/shims:$PATH
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH
+```
+3. Install latest version of Ruby via the `rbenv` package: `rbenv install 3.1.2`
+4. Set global version of Ruby via the `rbenv` package: `rbenv global 3.1.2`
+5. Fix `racc` version: `gem pristine racc --version 1.6.0`
+
 ### Download Package
 
 ```
@@ -44,16 +59,16 @@ gem install salesforce_certification_calculator
 
 ### Create Local Repository
 
-If you have trouble downloading the package or just want to play around with the code yourself, you can clone down [the repository from GitHub](https://github.com/jtreeves/salesforce_certification_calculator). Ensure you already have Ruby on your local computer. (You can check this by executing `ruby -v`.)
+If you have trouble downloading the package or just want to play around with the code yourself, you can clone down the [repository on GitHub](https://github.com/jtreeves/salesforce_certification_calculator). Ensure you already have Ruby on your local computer. (You can check this by executing `ruby -v`.)
 
 1. Fork this repository
 2. Clone it to your local computer
 3. From within your local version of the directory, build the module: `gem build salesforce_certification_calculator.gemspec`
-4. Then install that built module: `gem install ./salesforce_certification_calculator-0.1.0.gem`
+4. Then install that built module: `gem install ./salesforce_certification_calculator-0.1.2.gem`
 5. Open a Ruby environment to use the module: `irb`
 6. Execute any of the recently installed methods
 
-You may need to update the specific version of the build as later releases come out (e.g., `-0.1.0.gem` may need to become `-0.2.0.gem`).
+You may need to update the specific version of the build as later releases come out (e.g., `-0.1.2.gem` may need to become `-0.2.0.gem`).
 
 ## Usage
 
@@ -67,7 +82,7 @@ Of course, you may use any of the other methods provided by the package, but `de
 
 ## Documentation
 
-This project uses **YARD** for documentation generation. To view the published form, see [the documentation on the RubyDoc site](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.1). To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
+This project uses **YARD** for documentation generation. To view the published form, see the [documentation on the RubyDoc site](https://www.rubydoc.info/gems/salesforce_certification_calculator/0.1.2). To view the docs locally, go to the `doc` folder. To generate the docs yourself, execute `rake yard` in the CLI from the root of your local copy of the project.
 
 ## Code Examples
 
