@@ -660,7 +660,11 @@
 85
 86
 87
-88</pre>
+88
+89
+90
+91
+92</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator.rb', line 65</span>
@@ -672,12 +676,16 @@
         <span class='comment'># Get list of exams, prompt user to select one, then require user to provide their scores for all the exam&#39;s sections
 </span>        <span class='ivar'>@exams</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_generate_exams_list'>generate_exams_list</span>
         <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_select_specific_exam'>select_specific_exam</span><span class='lparen'>(</span><span class='ivar'>@exams</span><span class='rparen'>)</span>
-        <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
 
-        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You selected: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
-        <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter your scores for each of the exam&#39;s </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_sections'>sections</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> sections in the order you are prompted</span><span class='tstring_end'>&quot;</span></span>
-        
-        <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_provide_scores'>provide_scores</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
+        <span class='comment'># Only proceed if user did not end up entering data manually after not finding their exam listed
+</span>        <span class='kw'>if</span> <span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_sections'>sections</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>0</span>
+            <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@reader</span><span class='period'>.</span><span class='id identifier rubyid_extract_initial_exam_data'>extract_initial_exam_data</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
+
+            <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>You selected: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+            <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Enter your scores for each of the exam&#39;s </span><span class='embexpr_beg'>#{</span><span class='ivar'>@exam</span><span class='period'>.</span><span class='id identifier rubyid_sections'>sections</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> sections in the order you are prompted</span><span class='tstring_end'>&quot;</span></span>
+            
+            <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_provide_scores'>provide_scores</span><span class='lparen'>(</span><span class='ivar'>@exam</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
     <span class='kw'>else</span>
         <span class='comment'># Allow user to manually enter all data themselves without the aid of the data already stored in the module&#39;s XML files
 </span>        <span class='ivar'>@exam</span> <span class='op'>=</span> <span class='ivar'>@ui</span><span class='period'>.</span><span class='id identifier rubyid_provide_all_details_manually'>provide_all_details_manually</span>
@@ -811,7 +819,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 30 14:37:56 2022 by
+  Generated on Sat Jul 30 15:19:21 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

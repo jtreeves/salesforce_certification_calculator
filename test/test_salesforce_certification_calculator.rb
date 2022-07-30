@@ -186,4 +186,26 @@ class SalesforceTest < Minitest::Test
 
         assert_equal prompts, result[1].scan("?").length, "should prompt user for input 3 more than 3 times the number of sections in exam when call determine_percentage_manually and NEW selected"
     end
+    
+    def test_determine_percentage_manually_handles_not_listed_option
+        calculator = SFC.new
+        calculator.generate_exams_list
+
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "LIST"
+            string_io.puts "#{calculator.exams.length + 1}"
+            string_io.puts "My Test"
+            string_io.puts "1"
+            string_io.puts "Section 1"
+            string_io.puts "100"
+            string_io.puts "70"
+            string_io.rewind
+            $stdin = string_io
+            result = calculator.determine_percentage_manually
+            $stdin = STDIN
+        end
+
+        assert_equal 1, result[1].scan("What is the title of this exam?").length, "should prompt user for title of new test if user selects NOT LISTED after initially selecting LIST"
+    end
 end

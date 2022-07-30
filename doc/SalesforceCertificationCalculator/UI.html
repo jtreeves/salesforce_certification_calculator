@@ -667,7 +667,7 @@
         <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exams'>exams</span><span class='period'>.</span><span class='id identifier rubyid_find_index'>find_index</span><span class='lparen'>(</span><span class='id identifier rubyid_exam'>exam</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>1</span><span class='embexpr_end'>}</span><span class='tstring_content'> - </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exam'>exam</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
     <span class='kw'>end</span>
 
-    <span class='comment'># Add option to take user back to the LIST or NEW prompt
+    <span class='comment'># Add option to let user enter details manually if exam not listed
 </span>    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_exams_length'>exams_length</span> <span class='op'>+</span> <span class='int'>1</span><span class='embexpr_end'>}</span><span class='tstring_content'> - NOT LISTED</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Which one would you like to select? Enter the number before the exam name:</span><span class='tstring_end'>&quot;</span></span>
     <span class='id identifier rubyid_choice'>choice</span> <span class='op'>=</span> <span class='id identifier rubyid_gets'>gets</span><span class='period'>.</span><span class='id identifier rubyid_chomp'>chomp</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -676,8 +676,8 @@
         <span class='comment'># Only return value if user inputted number within range
 </span>        <span class='kw'>return</span> <span class='id identifier rubyid_exams'>exams</span><span class='lbracket'>[</span><span class='id identifier rubyid_choice'>choice</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
     <span class='kw'>elsif</span> <span class='id identifier rubyid_choice'>choice</span> <span class='op'>==</span> <span class='id identifier rubyid_exams_length'>exams_length</span> <span class='op'>+</span> <span class='int'>1</span>
-        <span class='comment'># Allow user to opt out if last option entered
-</span>        <span class='id identifier rubyid_select_list_or_new'>select_list_or_new</span><span class='lparen'>(</span><span class='rparen'>)</span>
+        <span class='comment'># Enter details manually if exam not included in list
+</span>        <span class='id identifier rubyid_provide_all_details_manually'>provide_all_details_manually</span><span class='lparen'>(</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
         <span class='comment'># Recursively recall function if invalid input
 </span>        <span class='id identifier rubyid_select_specific_exam'>select_specific_exam</span><span class='lparen'>(</span><span class='id identifier rubyid_exams'>exams</span><span class='rparen'>)</span>
@@ -693,7 +693,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Jul 30 14:37:57 2022 by
+  Generated on Sat Jul 30 15:19:21 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

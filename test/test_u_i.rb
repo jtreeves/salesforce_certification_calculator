@@ -184,18 +184,26 @@ class UITest < Minitest::Test
         assert_equal 1, result[1].scan("Which one would you like to select").length, "should call select_specific_exam only once if user inputs 2"
     end
 
-    def test_select_specific_exam_call_list_new
+    def test_select_specific_exam_call_provide_manually
         result = OStreamCatcher.catch do
             string_io = StringIO.new
             string_io.puts "#{@@exams.length + 1}"
-            string_io.puts "NEW"
+            string_io.puts "My Test"
+            string_io.puts "4"
+
+            (1..4).each do |i|
+                string_io.puts "Section #{i}"
+                string_io.puts "25"
+                string_io.puts "80"
+            end
+
             string_io.rewind
             $stdin = string_io
             @@ui.select_specific_exam(@@exams)
             $stdin = STDIN
         end
 
-        assert_equal 1, result[1].scan("Do you want to select an exam from a list (enter LIST), or do you want to type in your own details (enter NEW)?").length, "should call select_list_or_new if user enters NOT LISTED option"
+        assert_equal 1, result[1].scan("What is the title of this exam?").length, "should call provide_all_details_manually if user enters NOT LISTED option"
     end
 
     def test_select_specific_exam_recursion_greater
