@@ -43,7 +43,7 @@ class SalesforceCertificationCalculator::UI
             puts "#{exams.find_index(exam) + 1} - #{exam.title}"
         end
 
-        # Add option to take user back to the LIST or NEW prompt
+        # Add option to let user enter details manually if exam not listed
         puts "#{exams_length + 1} - NOT LISTED"
         puts "Which one would you like to select? Enter the number before the exam name:"
         choice = gets.chomp.to_i
@@ -52,8 +52,8 @@ class SalesforceCertificationCalculator::UI
             # Only return value if user inputted number within range
             return exams[choice - 1]
         elsif choice == exams_length + 1
-            # Allow user to opt out if last option entered
-            select_list_or_new()
+            # Enter details manually if exam not included in list
+            provide_all_details_manually()
         else
             # Recursively recall function if invalid input
             select_specific_exam(exams)
