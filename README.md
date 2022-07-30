@@ -134,7 +134,7 @@ end
 
 ## Testing
 
-This project has 103 automated tests, located in the `test` folder at the root. To run them, execute `rake test`. In order to successfully run these tests, you may need to also install `stringio` and `o_stream_catcher`.
+This project has 105 automated tests, located in the `test` folder at the root. To run them, execute `rake test`. In order to successfully run these tests, you may need to also install `stringio` and `o_stream_catcher`.
 
 ## Future Goals
 

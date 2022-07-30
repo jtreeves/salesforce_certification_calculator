@@ -212,6 +212,34 @@ class UITest < Minitest::Test
         assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs 0"
     end
 
+    def test_select_specific_exam_recursion_letter
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "a"
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs letter"
+    end
+
+    def test_select_specific_exam_recursion_title
+        result = OStreamCatcher.catch do
+            string_io = StringIO.new
+            string_io.puts "Advanced Administrator"
+            string_io.puts "1"
+            string_io.rewind
+            $stdin = string_io
+            @@ui.select_specific_exam(@@exams)
+            $stdin = STDIN
+        end
+
+        assert_operator result[1].scan("Which one would you like to select").length, :>, 1, "should call select_specific_exam more than once if user inputs title of exam instead of number"
+    end
+
     def test_provide_scores_returns_exam
         result = {}
 
