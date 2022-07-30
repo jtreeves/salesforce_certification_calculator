@@ -34,6 +34,8 @@ class SalesforceCertificationCalculator::UI
     # 
     # @return [Exam] object with name, file, and section details for selected exam
     def select_specific_exam(exams)
+        exams_length = exams.length
+
         puts "Your choices are:"
 
         # List exam options
@@ -41,13 +43,19 @@ class SalesforceCertificationCalculator::UI
             puts "#{exams.find_index(exam) + 1} - #{exam.title}"
         end
 
+        # Add option to take user back to the LIST or NEW prompt
+        puts "#{exams_length + 1} - NOT LISTED"
         puts "Which one would you like to select? Enter the number before the exam name:"
         choice = gets.chomp.to_i
 
-        # Only return value if user inputted number within range; otherwise, recursively recall function
-        if choice.between?(1, exams.length)
+        if choice.between?(1, exams_length)
+            # Only return value if user inputted number within range
             return exams[choice - 1]
+        elsif choice == exams_length + 1
+            # Allow user to opt out if last option entered
+            select_list_or_new()
         else
+            # Recursively recall function if invalid input
             select_specific_exam(exams)
         end
     end
