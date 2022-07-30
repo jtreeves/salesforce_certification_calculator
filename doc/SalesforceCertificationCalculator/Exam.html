@@ -793,7 +793,8 @@
 59
 60
 61
-62</pre>
+62
+63</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/salesforce_certification_calculator/exam.rb', line 48</span>
@@ -801,7 +802,8 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_calculate_total'>calculate_total</span>
     <span class='id identifier rubyid_summed_weights'>summed_weights</span> <span class='op'>=</span> <span class='int'>0</span>
 
-    <span class='ivar'>@sections</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_section'>section</span><span class='op'>|</span>
+    <span class='comment'># Sum weighted scores of all sections
+</span>    <span class='ivar'>@sections</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_section'>section</span><span class='op'>|</span>
         <span class='id identifier rubyid_summed_weights'>summed_weights</span> <span class='op'>+=</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span>
         <span class='ivar'>@total</span> <span class='op'>+=</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_weight'>weight</span> <span class='op'>*</span> <span class='id identifier rubyid_section'>section</span><span class='period'>.</span><span class='id identifier rubyid_score'>score</span> <span class='op'>/</span> <span class='float'>100.0</span>
     <span class='kw'>end</span>
@@ -823,7 +825,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Jul 29 14:14:44 2022 by
+  Generated on Sat Jul 30 14:37:57 2022 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.28 (ruby-3.1.2).
 </div>

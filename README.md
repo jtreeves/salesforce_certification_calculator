@@ -66,11 +66,11 @@ If you have trouble downloading the package or just want to play around with the
 1. Fork this repository
 2. Clone it to your local computer
 3. From within your local version of the directory, build the module: `gem build salesforce_certification_calculator.gemspec`
-4. Then install that built module: `gem install ./salesforce_certification_calculator-0.2.4.gem`
+4. Then install that built module: `gem install ./salesforce_certification_calculator-0.2.5.gem`
 5. Open a Ruby environment to use the module: `irb`
 6. Execute any of the recently installed methods
 
-You may need to update the specific version of the build as later releases come out (e.g., `-0.2.4.gem` may need to become `-0.3.0.gem`).
+You may need to update the specific version of the build as later releases come out (e.g., `-0.2.5.gem` may need to become `-0.3.0.gem`).
 
 ## Usage
 
@@ -134,7 +134,7 @@ end
 
 ## Testing
 
-This project has 105 automated tests, located in the `test` folder at the root. To run them, execute `rake test`. In order to successfully run these tests, you may need to also install `stringio` and `o_stream_catcher`.
+This project has 106 automated tests, located in the `test` folder at the root. To run them, execute `rake test`. In order to successfully run these tests, you may need to also install `stringio` and `o_stream_catcher`.
 
 ## Future Goals
 
